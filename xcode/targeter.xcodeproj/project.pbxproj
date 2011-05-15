@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097E3E40F3E9819005A4392 /* QuickTime.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		00BAE65A0E7ED9C10018A608 /* targeterApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */; };
+		00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 00CCAF14116A9FEE008396D5 /* CinderApp.icns */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A1164003137EE9B500859CC6 /* libcinder_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1163FD8137EE9B500859CC6 /* libcinder_d.a */; };
+		A11641AF137F141F00859CC6 /* haarcascade_eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419A137F141F00859CC6 /* haarcascade_eye.xml */; };
+		A11641B0137F141F00859CC6 /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419B137F141F00859CC6 /* haarcascade_eye_tree_eyeglasses.xml */; };
+		A11641B1137F141F00859CC6 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419C137F141F00859CC6 /* haarcascade_frontalface_alt.xml */; };
+		A11641B2137F141F00859CC6 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419D137F141F00859CC6 /* haarcascade_frontalface_alt2.xml */; };
+		A11641B3137F141F00859CC6 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419E137F141F00859CC6 /* haarcascade_frontalface_alt_tree.xml */; };
+		A11641B4137F141F00859CC6 /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116419F137F141F00859CC6 /* haarcascade_frontalface_default.xml */; };
+		A11641B5137F141F00859CC6 /* haarcascade_fullbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A0137F141F00859CC6 /* haarcascade_fullbody.xml */; };
+		A11641B6137F141F00859CC6 /* haarcascade_lefteye_2splits.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A1137F141F00859CC6 /* haarcascade_lefteye_2splits.xml */; };
+		A11641B7137F141F00859CC6 /* haarcascade_lowerbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A2137F141F00859CC6 /* haarcascade_lowerbody.xml */; };
+		A11641B8137F141F00859CC6 /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A3137F141F00859CC6 /* haarcascade_mcs_eyepair_big.xml */; };
+		A11641B9137F141F00859CC6 /* haarcascade_mcs_eyepair_small.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A4137F141F00859CC6 /* haarcascade_mcs_eyepair_small.xml */; };
+		A11641BA137F141F00859CC6 /* haarcascade_mcs_lefteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A5137F141F00859CC6 /* haarcascade_mcs_lefteye.xml */; };
+		A11641BB137F141F00859CC6 /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A6137F141F00859CC6 /* haarcascade_mcs_mouth.xml */; };
+		A11641BC137F141F00859CC6 /* haarcascade_mcs_nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A7137F141F00859CC6 /* haarcascade_mcs_nose.xml */; };
+		A11641BD137F141F00859CC6 /* haarcascade_mcs_righteye.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A8137F141F00859CC6 /* haarcascade_mcs_righteye.xml */; };
+		A11641BE137F141F00859CC6 /* haarcascade_mcs_upperbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641A9137F141F00859CC6 /* haarcascade_mcs_upperbody.xml */; };
+		A11641BF137F141F00859CC6 /* haarcascade_profileface.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641AA137F141F00859CC6 /* haarcascade_profileface.xml */; };
+		A11641C0137F141F00859CC6 /* haarcascade_righteye_2splits.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641AB137F141F00859CC6 /* haarcascade_righteye_2splits.xml */; };
+		A11641C1137F141F00859CC6 /* haarcascade_upperbody.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641AC137F141F00859CC6 /* haarcascade_upperbody.xml */; };
+		A11641C2137F141F00859CC6 /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = A11641AE137F141F00859CC6 /* lbpcascade_frontalface.xml */; };
+		A1164385137F238300859CC6 /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1164383137F238300859CC6 /* libcv.a */; };
+		A1164386137F238300859CC6 /* libcxcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1164384137F238300859CC6 /* libcxcore.a */; };
+		A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0097E3E40F3E9819005A4392 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		00BAE6590E7ED9C10018A608 /* targeterApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = targeterApp.cpp; path = ../src/targeterApp.cpp; sourceTree = SOURCE_ROOT; };
+		00CCAF14116A9FEE008396D5 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = SOURCE_ROOT; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* targeter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = targeter_Prefix.pch; sourceTree = "<group>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* targeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = targeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1163FD8137EE9B500859CC6 /* libcinder_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcinder_d.a; sourceTree = "<group>"; };
+		A116419A137F141F00859CC6 /* haarcascade_eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_eye.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_eye.xml; sourceTree = "<absolute>"; };
+		A116419B137F141F00859CC6 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_eye_tree_eyeglasses.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<absolute>"; };
+		A116419C137F141F00859CC6 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_alt.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt.xml; sourceTree = "<absolute>"; };
+		A116419D137F141F00859CC6 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_alt2.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt2.xml; sourceTree = "<absolute>"; };
+		A116419E137F141F00859CC6 /* haarcascade_frontalface_alt_tree.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_alt_tree.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml; sourceTree = "<absolute>"; };
+		A116419F137F141F00859CC6 /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_frontalface_default.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_frontalface_default.xml; sourceTree = "<absolute>"; };
+		A11641A0137F141F00859CC6 /* haarcascade_fullbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_fullbody.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_fullbody.xml; sourceTree = "<absolute>"; };
+		A11641A1137F141F00859CC6 /* haarcascade_lefteye_2splits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_lefteye_2splits.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_lefteye_2splits.xml; sourceTree = "<absolute>"; };
+		A11641A2137F141F00859CC6 /* haarcascade_lowerbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_lowerbody.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_lowerbody.xml; sourceTree = "<absolute>"; };
+		A11641A3137F141F00859CC6 /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_eyepair_big.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_eyepair_big.xml; sourceTree = "<absolute>"; };
+		A11641A4137F141F00859CC6 /* haarcascade_mcs_eyepair_small.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_eyepair_small.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_eyepair_small.xml; sourceTree = "<absolute>"; };
+		A11641A5137F141F00859CC6 /* haarcascade_mcs_lefteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_lefteye.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_lefteye.xml; sourceTree = "<absolute>"; };
+		A11641A6137F141F00859CC6 /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_mouth.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_mouth.xml; sourceTree = "<absolute>"; };
+		A11641A7137F141F00859CC6 /* haarcascade_mcs_nose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_nose.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_nose.xml; sourceTree = "<absolute>"; };
+		A11641A8137F141F00859CC6 /* haarcascade_mcs_righteye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_righteye.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_righteye.xml; sourceTree = "<absolute>"; };
+		A11641A9137F141F00859CC6 /* haarcascade_mcs_upperbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_mcs_upperbody.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_mcs_upperbody.xml; sourceTree = "<absolute>"; };
+		A11641AA137F141F00859CC6 /* haarcascade_profileface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_profileface.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_profileface.xml; sourceTree = "<absolute>"; };
+		A11641AB137F141F00859CC6 /* haarcascade_righteye_2splits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_righteye_2splits.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_righteye_2splits.xml; sourceTree = "<absolute>"; };
+		A11641AC137F141F00859CC6 /* haarcascade_upperbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = haarcascade_upperbody.xml; path = /usr/local/share/opencv/haarcascades/haarcascade_upperbody.xml; sourceTree = "<absolute>"; };
+		A11641AE137F141F00859CC6 /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lbpcascade_frontalface.xml; path = /usr/local/share/opencv/lbpcascades/lbpcascade_frontalface.xml; sourceTree = "<absolute>"; };
+		A116435A137F1E7300859CC6 /* CinderOpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderOpenCV.h; sourceTree = "<group>"; };
+		A1164383137F238300859CC6 /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcv.a; path = "../../../cpp/Cinder-OpenCV.git/lib/macosx/libcv.a"; sourceTree = SOURCE_ROOT; };
+		A1164384137F238300859CC6 /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcxcore.a; path = "../../../cpp/Cinder-OpenCV.git/lib/macosx/libcxcore.a"; sourceTree = SOURCE_ROOT; };
+		A116443D137FBD9400859CC6 /* CapturingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CapturingDevice.h; path = ../../../cpp/cinder.git/blocks/opencv/include/CapturingDevice.h; sourceTree = "<group>"; };
+		A1164450137FBE5100859CC6 /* CapturingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CapturingDevice.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
+				0097E3E50F3E9819005A4392 /* QuickTime.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+				A1164003137EE9B500859CC6 /* libcinder_d.a in Frameworks */,
+				A1164385137F238300859CC6 /* libcv.a in Frameworks */,
+				A1164386137F238300859CC6 /* libcxcore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				00BAE6590E7ED9C10018A608 /* targeterApp.cpp */,
+				A1164450137FBE5100859CC6 /* CapturingDevice.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				0097E3E40F3E9819005A4392 /* QuickTime.framework */,
+				5323E6B50EAFCA7E003A9687 /* QTKit.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				53E3CDFB0E86099300238D2B /* Carbon.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* targeter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* targeter */ = {
+			isa = PBXGroup;
+			children = (
+				A116402E137EF10200859CC6 /* Blocks */,
+				A1163FC9137EE99C00859CC6 /* Cinder */,
+				A1B94E3F137D5F8C003703F3 /* OpenCV */,
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = targeter;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A116443D137FBD9400859CC6 /* CapturingDevice.h */,
+				32CA4F630368D1EE00C91783 /* targeter_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* Info.plist */,
+				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1163FC9137EE99C00859CC6 /* Cinder */ = {
+			isa = PBXGroup;
+			children = (
+				A1163FCC137EE9B500859CC6 /* lib */,
+			);
+			name = Cinder;
+			sourceTree = "<group>";
+		};
+		A1163FCC137EE9B500859CC6 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A1163FD8137EE9B500859CC6 /* libcinder_d.a */,
+			);
+			name = lib;
+			path = ../../../cpp/cinder.git/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		A116402E137EF10200859CC6 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				A1164383137F238300859CC6 /* libcv.a */,
+				A1164384137F238300859CC6 /* libcxcore.a */,
+				A1164359137F1E7300859CC6 /* include */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		A1164199137F141F00859CC6 /* haarcascades */ = {
+			isa = PBXGroup;
+			children = (
+				A116419A137F141F00859CC6 /* haarcascade_eye.xml */,
+				A116419B137F141F00859CC6 /* haarcascade_eye_tree_eyeglasses.xml */,
+				A116419C137F141F00859CC6 /* haarcascade_frontalface_alt.xml */,
+				A116419D137F141F00859CC6 /* haarcascade_frontalface_alt2.xml */,
+				A116419E137F141F00859CC6 /* haarcascade_frontalface_alt_tree.xml */,
+				A116419F137F141F00859CC6 /* haarcascade_frontalface_default.xml */,
+				A11641A0137F141F00859CC6 /* haarcascade_fullbody.xml */,
+				A11641A1137F141F00859CC6 /* haarcascade_lefteye_2splits.xml */,
+				A11641A2137F141F00859CC6 /* haarcascade_lowerbody.xml */,
+				A11641A3137F141F00859CC6 /* haarcascade_mcs_eyepair_big.xml */,
+				A11641A4137F141F00859CC6 /* haarcascade_mcs_eyepair_small.xml */,
+				A11641A5137F141F00859CC6 /* haarcascade_mcs_lefteye.xml */,
+				A11641A6137F141F00859CC6 /* haarcascade_mcs_mouth.xml */,
+				A11641A7137F141F00859CC6 /* haarcascade_mcs_nose.xml */,
+				A11641A8137F141F00859CC6 /* haarcascade_mcs_righteye.xml */,
+				A11641A9137F141F00859CC6 /* haarcascade_mcs_upperbody.xml */,
+				A11641AA137F141F00859CC6 /* haarcascade_profileface.xml */,
+				A11641AB137F141F00859CC6 /* haarcascade_righteye_2splits.xml */,
+				A11641AC137F141F00859CC6 /* haarcascade_upperbody.xml */,
+			);
+			name = haarcascades;
+			path = /usr/local/share/opencv/haarcascades;
+			sourceTree = "<absolute>";
+		};
+		A11641AD137F141F00859CC6 /* lbpcascades */ = {
+			isa = PBXGroup;
+			children = (
+				A11641AE137F141F00859CC6 /* lbpcascade_frontalface.xml */,
+			);
+			name = lbpcascades;
+			path = /usr/local/share/opencv/lbpcascades;
+			sourceTree = "<absolute>";
+		};
+		A1164359137F1E7300859CC6 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A116435A137F1E7300859CC6 /* CinderOpenCV.h */,
+			);
+			name = include;
+			path = ../../../cpp/cinder.git/blocks/opencv/include;
+			sourceTree = SOURCE_ROOT;
+		};
+		A1B94E3F137D5F8C003703F3 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				A1164199137F141F00859CC6 /* haarcascades */,
+				A11641AD137F141F00859CC6 /* lbpcascades */,
+			);
+			name = OpenCV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* targeter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "targeter" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = targeter;
+			productInstallPath = "$(HOME)/Applications";
+			productName = targeter;
+			productReference = 8D1107320486CEB800E47090 /* targeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "targeter" */;
+			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* targeter */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* targeter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
+				A11641AF137F141F00859CC6 /* haarcascade_eye.xml in Resources */,
+				A11641B0137F141F00859CC6 /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
+				A11641B1137F141F00859CC6 /* haarcascade_frontalface_alt.xml in Resources */,
+				A11641B2137F141F00859CC6 /* haarcascade_frontalface_alt2.xml in Resources */,
+				A11641B3137F141F00859CC6 /* haarcascade_frontalface_alt_tree.xml in Resources */,
+				A11641B4137F141F00859CC6 /* haarcascade_frontalface_default.xml in Resources */,
+				A11641B5137F141F00859CC6 /* haarcascade_fullbody.xml in Resources */,
+				A11641B6137F141F00859CC6 /* haarcascade_lefteye_2splits.xml in Resources */,
+				A11641B7137F141F00859CC6 /* haarcascade_lowerbody.xml in Resources */,
+				A11641B8137F141F00859CC6 /* haarcascade_mcs_eyepair_big.xml in Resources */,
+				A11641B9137F141F00859CC6 /* haarcascade_mcs_eyepair_small.xml in Resources */,
+				A11641BA137F141F00859CC6 /* haarcascade_mcs_lefteye.xml in Resources */,
+				A11641BB137F141F00859CC6 /* haarcascade_mcs_mouth.xml in Resources */,
+				A11641BC137F141F00859CC6 /* haarcascade_mcs_nose.xml in Resources */,
+				A11641BD137F141F00859CC6 /* haarcascade_mcs_righteye.xml in Resources */,
+				A11641BE137F141F00859CC6 /* haarcascade_mcs_upperbody.xml in Resources */,
+				A11641BF137F141F00859CC6 /* haarcascade_profileface.xml in Resources */,
+				A11641C0137F141F00859CC6 /* haarcascade_righteye_2splits.xml in Resources */,
+				A11641C1137F141F00859CC6 /* haarcascade_upperbody.xml in Resources */,
+				A11641C2137F141F00859CC6 /* lbpcascade_frontalface.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BAE65A0E7ED9C10018A608 /* targeterApp.cpp in Sources */,
+				A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = targeter_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/ios\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/ios-sim\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/macosx\"",
+					"\"$(SRCROOT)/../../../cpp/Cinder-OpenCV.git/lib/macosx\"",
+				);
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
+				PRODUCT_NAME = targeter;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = targeter_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/ios\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/ios-sim\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib\"",
+					"\"$(SRCROOT)/../../../cpp/cinder.git/lib/macosx\"",
+					"\"$(SRCROOT)/../../../cpp/Cinder-OpenCV.git/lib/macosx\"",
+				);
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
+				PRODUCT_NAME = targeter;
+				STRIP_INSTALLED_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				CINDER_PATH = /Users/krasi/cpp/cinder.git;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(HOME)/cpp/boost";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PREBINDING = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../include $(CINDER_PATH)/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				CINDER_PATH = /Users/krasi/cpp/cinder.git;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(HOME)/cpp/boost";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PREBINDING = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../include $(CINDER_PATH)/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "targeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "targeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
