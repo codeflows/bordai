@@ -61,7 +61,7 @@ void targeterApp::update() {
 	for( vector<Capture>::iterator cIt = mCamera.mCaptures.begin(); cIt != mCamera.mCaptures.end(); ++cIt ) {
 		if( cIt->checkNewFrame() ) {
 			Surface8u surf = cIt->getSurface();
-			mTextures[cIt - mCaptures.begin()] = gl::Texture( surf );
+			mTextures[cIt - mCamera.mCaptures.begin()] = gl::Texture( surf );
 			updateTargets( surf );
 		}
 	}
@@ -103,8 +103,8 @@ void targeterApp::draw()
 	for( vector<Capture>::iterator cIt = mCamera.mCaptures.begin(); cIt != mCamera.mCaptures.end(); ++cIt ) {	
 		// draw the latest frame
 		gl::color( Color::white() );
-		if( mTextures[cIt-mCaptures.begin()] ) {
-			gl::Texture latestFromCamera = mTextures[cIt-mCaptures.begin()];
+		if( mTextures[cIt-mCamera.mCaptures.begin()] ) {
+			gl::Texture latestFromCamera = mTextures[cIt-mCamera.mCaptures.begin()];
 			gl::draw(latestFromCamera , Rectf( x, y, x + width, y + height ) );
 			latestFromCamera.disable();
 			for (vector<Rectf>::const_iterator targetIter = mTargets.begin(); targetIter != mTargets.end(); ++targetIter) {
@@ -121,9 +121,9 @@ void targeterApp::draw()
 		
 		// draw the name
 		gl::color( Color::black() );	
-		gl::draw( mNameTextures[cIt-mCaptures.begin()], Vec2f( x + 10 + 1, y + 10 + 1 ) );
+		gl::draw( mCamera.mDeviceNameTextures[cIt-mCamera.mCaptures.begin()], Vec2f( x + 10 + 1, y + 10 + 1 ) );
 		gl::color( Color( 0.5, 0.75, 1 ) );
-		gl::draw( mNameTextures[cIt-mCaptures.begin()], Vec2f( x + 10, y + 10 ) );
+		gl::draw( mCamera.mDeviceNameTextures[cIt-mCamera.mCaptures.begin()], Vec2f( x + 10, y + 10 ) );
 		
 		x += width;
 	}	
