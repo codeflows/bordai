@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ -z ${BOOST_ROOT} ]; then
-  echo "You need to set BOOST_ROOT env var"; exit -1
+  echo "You need to set BOOST_ROOT env var"; exit 1
 fi
 
 BASE=$(dirname $0)
