@@ -22,3 +22,4 @@ fi
 ln -s $BOOST_ROOT $BASE/lib/boost
 
 echo "done."
+exit 0
