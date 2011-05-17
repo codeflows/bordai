@@ -11,6 +11,7 @@ ln -s $BOOST_ROOT $BASE/lib/cinder.git/boost
 
 echo "Building Cinder release lib with xcode"
 xcodebuild -project $BASE/lib/cinder.git/xcode/cinder.xcodeproj -target cinder -configuration Release
+xcodebuild -project $BASE/lib/cinder.git/xcode/cinder.xcodeproj -target cinder -configuration Debug
 
 rm $BASE/lib/cinder.git/boost
 
