@@ -9,7 +9,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class targeterApp : public AppBasic {
+class bordaiApp : public AppBasic {
   public:
 	void prepareSettings(Settings *settings);
 	void setup();
@@ -21,18 +21,18 @@ class targeterApp : public AppBasic {
 	CapturingDevice mCamera;
 };
 
-void targeterApp::prepareSettings(Settings *settings) {
+void bordaiApp::prepareSettings(Settings *settings) {
 	settings -> setFrameRate(60.0f);
 	settings -> setWindowSize(WIDTH, HEIGHT);
 	mCamera.setLensSize(WIDTH, HEIGHT);
 	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
 }
 
-void targeterApp::setup() {
+void bordaiApp::setup() {
 	mCamera.startCapturing();
 }
 
-void targeterApp::keyDown( KeyEvent event ) {
+void bordaiApp::keyDown( KeyEvent event ) {
 	if(event.getChar() == 'f') {
 		setFullScreen( !isFullScreen() );
 	}
@@ -41,11 +41,11 @@ void targeterApp::keyDown( KeyEvent event ) {
 	}
 }
 
-void targeterApp::update() {	
+void bordaiApp::update() {	
 	mCamera.bufferCaptured();
 }
 
-void targeterApp::draw()
+void bordaiApp::draw()
 {
 	gl::enableAlphaBlending();
 	gl::clear( Color::black() );
@@ -55,5 +55,4 @@ void targeterApp::draw()
 	}
 }
 
-
-CINDER_APP_BASIC( targeterApp, RendererGl )
+CINDER_APP_BASIC( bordaiApp, RendererGl )
