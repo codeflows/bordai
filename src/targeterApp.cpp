@@ -25,7 +25,7 @@ void targeterApp::prepareSettings(Settings *settings) {
 	settings -> setFrameRate(60.0f);
 	settings -> setWindowSize(WIDTH, HEIGHT);
 	mCamera.setLensSize(WIDTH, HEIGHT);
-	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_mcs_eyepair_small.xml" ) ));
+	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
 }
 
 void targeterApp::setup() {
