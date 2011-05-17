@@ -43,6 +43,8 @@
 		A1164385137F238300859CC6 /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1164383137F238300859CC6 /* libcv.a */; };
 		A1164386137F238300859CC6 /* libcxcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1164384137F238300859CC6 /* libcxcore.a */; };
 		A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */; };
+		A11644FB13804C2600859CC6 /* ImageScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11644FA13804C2600859CC6 /* ImageScanner.cpp */; };
+		A116463B1381D00100859CC6 /* aGest.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116463A1381D00100859CC6 /* aGest.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,9 @@
 		A1164384137F238300859CC6 /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcxcore.a; path = "../../../cpp/Cinder-OpenCV.git/lib/macosx/libcxcore.a"; sourceTree = SOURCE_ROOT; };
 		A116443D137FBD9400859CC6 /* CapturingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CapturingDevice.h; path = ../../../cpp/cinder.git/blocks/opencv/include/CapturingDevice.h; sourceTree = "<group>"; };
 		A1164450137FBE5100859CC6 /* CapturingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CapturingDevice.cpp; sourceTree = "<group>"; };
+		A11644F913804C2600859CC6 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		A11644FA13804C2600859CC6 /* ImageScanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageScanner.cpp; sourceTree = "<group>"; };
+		A116463A1381D00100859CC6 /* aGest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = aGest.xml; path = ../../../Desktop/aGest.xml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +126,7 @@
 			children = (
 				00BAE6590E7ED9C10018A608 /* targeterApp.cpp */,
 				A1164450137FBE5100859CC6 /* CapturingDevice.cpp */,
+				A11644FA13804C2600859CC6 /* ImageScanner.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				A11644F913804C2600859CC6 /* ImageScanner.h */,
 				A116443D137FBD9400859CC6 /* CapturingDevice.h */,
 				32CA4F630368D1EE00C91783 /* targeter_Prefix.pch */,
 			);
@@ -187,6 +194,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A116463A1381D00100859CC6 /* aGest.xml */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
@@ -354,6 +362,7 @@
 				A11641C0137F141F00859CC6 /* haarcascade_righteye_2splits.xml in Resources */,
 				A11641C1137F141F00859CC6 /* haarcascade_upperbody.xml in Resources */,
 				A11641C2137F141F00859CC6 /* lbpcascade_frontalface.xml in Resources */,
+				A116463B1381D00100859CC6 /* aGest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +375,7 @@
 			files = (
 				00BAE65A0E7ED9C10018A608 /* targeterApp.cpp in Sources */,
 				A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */,
+				A11644FB13804C2600859CC6 /* ImageScanner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
