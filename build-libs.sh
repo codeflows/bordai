@@ -15,4 +15,10 @@ xcodebuild -project $BASE/lib/cinder.git/xcode/cinder.xcodeproj -target cinder -
 
 rm $BASE/lib/cinder.git/boost
 
+echo "Setting link to boost under libs for"
+if [ -d ${BASE}/lib/boost ]; then
+  rm $BASE/lib/boost
+fi
+ln -s $BOOST_ROOT $BASE/lib/boost
+
 echo "done."
