@@ -2,8 +2,8 @@
 
 #include "CapturingDevice.h"
 
-#define WIDTH 640
-#define HEIGHT 480
+#define WIDTH 800	
+#define HEIGHT 600
 
 using namespace ci;
 using namespace ci::app;
@@ -25,7 +25,7 @@ void targeterApp::prepareSettings(Settings *settings) {
 	settings -> setFrameRate(60.0f);
 	settings -> setWindowSize(WIDTH, HEIGHT);
 	mCamera.setLensSize(WIDTH, HEIGHT);
-	mCamera.setImageScanner(ImageScanner( getResourcePath( "aGest.xml" ) ));
+	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_mcs_eyepair_small.xml" ) ));
 }
 
 void targeterApp::setup() {

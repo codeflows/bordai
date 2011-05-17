@@ -2,9 +2,9 @@
 {
 	00BAE6590E7ED9C10018A608 /* targeterApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 780}}";
-			sepNavSelRange = "{921, 0}";
-			sepNavVisRange = "{82, 977}";
+			sepNavIntBoundsRect = "{{0, 0}, {946, 780}}";
+			sepNavSelRange = "{820, 0}";
+			sepNavVisRange = "{64, 1071}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -79,7 +79,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					688,
+					697,
 					20,
 					48,
 					43,
@@ -437,6 +437,21 @@
 			A116462F1381CF6B00859CC6 /* PBXTextBookmark */ = A116462F1381CF6B00859CC6 /* PBXTextBookmark */;
 			A11646301381CF6B00859CC6 /* PBXTextBookmark */ = A11646301381CF6B00859CC6 /* PBXTextBookmark */;
 			A11646311381CF6B00859CC6 /* PBXTextBookmark */ = A11646311381CF6B00859CC6 /* PBXTextBookmark */;
+			A116464D13825DC400859CC6 /* PBXTextBookmark */ = A116464D13825DC400859CC6 /* PBXTextBookmark */;
+			A116464E13825DC400859CC6 /* PBXTextBookmark */ = A116464E13825DC400859CC6 /* PBXTextBookmark */;
+			A116464F13825DC400859CC6 /* PBXTextBookmark */ = A116464F13825DC400859CC6 /* PBXTextBookmark */;
+			A116465013825DC400859CC6 /* PBXTextBookmark */ = A116465013825DC400859CC6 /* PBXTextBookmark */;
+			A116465113825DC400859CC6 /* PBXTextBookmark */ = A116465113825DC400859CC6 /* PBXTextBookmark */;
+			A116465413825DE100859CC6 /* PBXTextBookmark */ = A116465413825DE100859CC6 /* PBXTextBookmark */;
+			A116465813825E2900859CC6 /* PBXTextBookmark */ = A116465813825E2900859CC6 /* PBXTextBookmark */;
+			A116465913825E2900859CC6 /* PBXTextBookmark */ = A116465913825E2900859CC6 /* PBXTextBookmark */;
+			A116465A13825E2900859CC6 /* PBXTextBookmark */ = A116465A13825E2900859CC6 /* PBXTextBookmark */;
+			A116465E1382602F00859CC6 /* PBXTextBookmark */ = A116465E1382602F00859CC6 /* PBXTextBookmark */;
+			A1164665138260D900859CC6 /* PBXTextBookmark */ = A1164665138260D900859CC6 /* PBXTextBookmark */;
+			A116466B1382813100859CC6 /* PBXTextBookmark */ = A116466B1382813100859CC6 /* PBXTextBookmark */;
+			A116466C1382813100859CC6 /* PBXTextBookmark */ = A116466C1382813100859CC6 /* PBXTextBookmark */;
+			A116466D1382813100859CC6 /* PBXTextBookmark */ = A116466D1382813100859CC6 /* PBXTextBookmark */;
+			A116466E1382813100859CC6 /* PBXTextBookmark */ = A116466E1382813100859CC6 /* PBXTextBookmark */;
 			A1B94EDD137D600F003703F3 = A1B94EDD137D600F003703F3 /* PBXBookmark */;
 			A1B95359137DF960003703F3 = A1B95359137DF960003703F3 /* PBXTextBookmark */;
 		};
@@ -506,7 +521,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 1875;
@@ -516,7 +531,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 123";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1503;
 		vrLoc = 3210;
@@ -578,7 +593,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 87";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 2324;
@@ -597,7 +612,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 101";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 440;
 		vrLoc = 2890;
@@ -616,7 +631,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 628;
 		vrLoc = 3811;
@@ -626,7 +641,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -636,7 +651,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -646,7 +661,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -686,7 +701,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -696,7 +711,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -706,7 +721,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -716,7 +731,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -736,7 +751,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -746,7 +761,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -766,7 +781,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 3333;
@@ -776,7 +791,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 2191;
@@ -822,7 +837,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 2191;
@@ -832,7 +847,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 2220;
@@ -856,7 +871,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 2381;
@@ -883,7 +898,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
@@ -893,16 +908,16 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
 	};
 	A116435A137F1E7300859CC6 /* CinderOpenCV.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1062, 2210}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1062, 2340}}";
 			sepNavSelRange = "{114, 46}";
-			sepNavVisRange = "{879, 1423}";
+			sepNavVisRange = "{0, 1332}";
 			sepNavWindowFrame = "{{551, 42}, {1156, 886}}";
 		};
 	};
@@ -911,7 +926,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
@@ -921,7 +936,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
@@ -931,7 +946,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 99";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
@@ -941,7 +956,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 25";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 0;
@@ -992,7 +1007,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 30";
 		rLen = 0;
-		rLoc = 377;
+		rLoc = 378;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -1012,7 +1027,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 12";
 		rLen = 0;
-		rLoc = 167;
+		rLoc = 168;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 33;
@@ -1022,7 +1037,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 23";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 0;
@@ -1032,7 +1047,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 23";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 0;
@@ -1042,7 +1057,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 23";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 0;
@@ -1052,7 +1067,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 23";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 377;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 0;
@@ -1062,7 +1077,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 127";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 3331;
@@ -1167,7 +1182,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 125";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1412;
 		vrLoc = 3245;
@@ -1177,7 +1192,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 3271;
@@ -1187,7 +1202,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 3273;
@@ -1207,7 +1222,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 125";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1292;
 		vrLoc = 3368;
@@ -1246,7 +1261,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 100";
 		rLen = 0;
-		rLoc = 921;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1476;
 		vrLoc = 2392;
@@ -1256,7 +1271,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 3200;
@@ -1276,7 +1291,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 135";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 3131;
@@ -1286,7 +1301,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 129";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1424;
 		vrLoc = 3131;
@@ -1296,7 +1311,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1469;
 		vrLoc = 3131;
@@ -1316,7 +1331,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 128";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1665;
 		vrLoc = 2967;
@@ -1326,7 +1341,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 129";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 3131;
@@ -1336,7 +1351,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 3164;
@@ -1356,7 +1371,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 3084;
@@ -1366,7 +1381,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 129";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 3131;
@@ -1376,7 +1391,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1519;
 		vrLoc = 3200;
@@ -1386,7 +1401,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1526;
 		vrLoc = 3200;
@@ -1396,7 +1411,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1526;
 		vrLoc = 3200;
@@ -1406,7 +1421,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 3200;
@@ -1426,7 +1441,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 129";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1608;
 		vrLoc = 3131;
@@ -1436,7 +1451,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 3200;
@@ -1456,7 +1471,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 128";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 3131;
@@ -1466,7 +1481,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 132";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 3200;
@@ -1476,14 +1491,14 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 130";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 3200;
 	};
 	A116443D137FBD9400859CC6 /* CapturingDevice.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 633}}";
+			sepNavIntBoundsRect = "{{0, 0}, {946, 724}}";
 			sepNavSelRange = "{600, 0}";
 			sepNavVisRange = "{0, 604}";
 			sepNavWindowFrame = "{{84, 74}, {1156, 886}}";
@@ -1504,7 +1519,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 123";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1541;
 		vrLoc = 515;
@@ -1551,9 +1566,9 @@
 	};
 	A1164450137FBE5100859CC6 /* CapturingDevice.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {873, 1196}}";
-			sepNavSelRange = "{2859, 0}";
-			sepNavVisRange = "{1372, 1521}";
+			sepNavIntBoundsRect = "{{0, 0}, {946, 1118}}";
+			sepNavSelRange = "{2266, 0}";
+			sepNavVisRange = "{1096, 1755}";
 		};
 	};
 	A116446E1380020600859CC6 /* CapturingDevice.cpp:1 */ = {
@@ -1568,7 +1583,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 1;
-		modificationTime = 327274504.850044;
+		modificationTime = 327319856.169757;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
 	};
@@ -1612,7 +1627,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 42";
 		rLen = 0;
-		rLoc = 682;
+		rLoc = 707;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 0;
@@ -1632,7 +1647,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 12";
 		rLen = 20;
-		rLoc = 147;
+		rLoc = 148;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 0;
@@ -1681,7 +1696,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 42";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 587;
@@ -1721,7 +1736,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 44";
 		rLen = 0;
-		rLoc = 655;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1452;
 		vrLoc = 202;
@@ -1731,7 +1746,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 40";
 		rLen = 0;
-		rLoc = 529;
+		rLoc = 530;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 266;
@@ -1741,7 +1756,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 40";
 		rLen = 0;
-		rLoc = 529;
+		rLoc = 530;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 266;
@@ -1801,7 +1816,7 @@
 		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
 		name = "CapturingDevice.cpp: 47";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2851;
 		rType = 0;
 		vrLen = 1584;
 		vrLoc = 340;
@@ -1831,7 +1846,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 53";
 		rLen = 0;
-		rLoc = 855;
+		rLoc = 880;
 		rType = 0;
 		vrLen = 1556;
 		vrLoc = 790;
@@ -1841,7 +1856,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 103";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1594;
 		vrLoc = 2364;
@@ -1860,7 +1875,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 352;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 896;
 		vrLoc = 790;
@@ -1880,7 +1895,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 108";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1689;
 		vrLoc = 2317;
@@ -1890,7 +1905,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 64";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1472;
 		vrLoc = 1095;
@@ -1922,7 +1937,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 64";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 1141;
@@ -1932,7 +1947,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 39";
 		rLen = 0;
-		rLoc = 438;
+		rLoc = 439;
 		rType = 0;
 		vrLen = 1371;
 		vrLoc = 584;
@@ -1949,7 +1964,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 352;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 928;
@@ -1979,7 +1994,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 61";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 847;
@@ -2009,7 +2024,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 61";
 		rLen = 0;
-		rLoc = 918;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 791;
@@ -2019,7 +2034,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 131";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1625;
 		vrLoc = 2528;
@@ -2029,14 +2044,14 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 352;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 1165;
 		vrLoc = 968;
 	};
 	A11644F913804C2600859CC6 /* ImageScanner.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 633}}";
+			sepNavIntBoundsRect = "{{0, 0}, {946, 724}}";
 			sepNavSelRange = "{462, 0}";
 			sepNavVisRange = "{0, 465}";
 			sepNavWindowFrame = "{{107, 53}, {1156, 886}}";
@@ -2055,7 +2070,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 25";
 		rLen = 0;
-		rLoc = 352;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 982;
@@ -2131,7 +2146,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 59";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 1096;
@@ -2160,7 +2175,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 71";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 779;
 		vrLoc = 0;
@@ -2220,7 +2235,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 68";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1699;
 		vrLoc = 1012;
@@ -2280,7 +2295,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 32";
 		rLen = 0;
-		rLoc = 552;
+		rLoc = 553;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 334;
@@ -2290,7 +2305,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 32";
 		rLen = 0;
-		rLoc = 552;
+		rLoc = 553;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 334;
@@ -2340,7 +2355,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 32";
 		rLen = 0;
-		rLoc = 552;
+		rLoc = 553;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 319;
@@ -2410,7 +2425,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 32";
 		rLen = 0;
-		rLoc = 552;
+		rLoc = 553;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 319;
@@ -2450,7 +2465,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 36";
 		rLen = 14;
-		rLoc = 665;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 397;
@@ -2477,7 +2492,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 71";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 266;
@@ -2514,7 +2529,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 71";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 276;
@@ -2554,7 +2569,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 36";
 		rLen = 14;
-		rLoc = 665;
+		rLoc = 690;
 		rType = 0;
 		vrLen = 1394;
 		vrLoc = 399;
@@ -2564,7 +2579,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 60";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 1702;
 		vrLoc = 1010;
@@ -2574,7 +2589,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 60";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 764;
 		vrLoc = 334;
@@ -2584,7 +2599,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 60";
 		rLen = 0;
-		rLoc = 1062;
+		rLoc = 1087;
 		rType = 0;
 		vrLen = 764;
 		vrLoc = 334;
@@ -2642,7 +2657,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 57";
 		rLen = 0;
-		rLoc = 1009;
+		rLoc = 1034;
 		rType = 0;
 		vrLen = 682;
 		vrLoc = 614;
@@ -2682,7 +2697,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 57";
 		rLen = 0;
-		rLoc = 1009;
+		rLoc = 1034;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 276;
@@ -2722,7 +2737,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 57";
 		rLen = 0;
-		rLoc = 1009;
+		rLoc = 1034;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 724;
@@ -2791,7 +2806,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 57";
 		rLen = 0;
-		rLoc = 1009;
+		rLoc = 1034;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 266;
@@ -2801,7 +2816,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 463;
+		rLoc = 464;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 33;
@@ -2921,7 +2936,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 29";
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 466;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 123;
@@ -2931,7 +2946,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 28";
 		rLen = 0;
-		rLoc = 464;
+		rLoc = 465;
 		rType = 0;
 		vrLen = 1003;
 		vrLoc = 33;
@@ -2961,7 +2976,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 30";
 		rLen = 0;
-		rLoc = 550;
+		rLoc = 551;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 33;
@@ -2971,7 +2986,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 30";
 		rLen = 0;
-		rLoc = 550;
+		rLoc = 551;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 67;
@@ -2981,7 +2996,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 57";
 		rLen = 0;
-		rLoc = 1009;
+		rLoc = 1034;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 651;
@@ -3220,10 +3235,160 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 28";
 		rLen = 0;
-		rLoc = 550;
+		rLoc = 551;
 		rType = 0;
 		vrLen = 965;
 		vrLoc = 169;
+	};
+	A116464D13825DC400859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 47";
+		rLen = 0;
+		rLoc = 946;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 82;
+	};
+	A116464E13825DC400859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A116435A137F1E7300859CC6 /* CinderOpenCV.h */;
+		name = "CinderOpenCV.h: 10";
+		rLen = 46;
+		rLoc = 114;
+		rType = 0;
+		vrLen = 1332;
+		vrLoc = 0;
+	};
+	A116464F13825DC400859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A116443D137FBD9400859CC6 /* CapturingDevice.h */;
+		name = "CapturingDevice.h: 24";
+		rLen = 0;
+		rLoc = 600;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A116465013825DC400859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
+		name = "CapturingDevice.cpp: 88";
+		rLen = 0;
+		rLoc = 2851;
+		rType = 0;
+		vrLen = 1521;
+		vrLoc = 1372;
+	};
+	A116465113825DC400859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
+		name = "CapturingDevice.cpp: 86";
+		rLen = 0;
+		rLoc = 2851;
+		rType = 0;
+		vrLen = 1585;
+		vrLoc = 1266;
+	};
+	A116465413825DE100859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
+		name = "CapturingDevice.cpp: 65";
+		rLen = 0;
+		rLoc = 2266;
+		rType = 0;
+		vrLen = 1490;
+		vrLoc = 1363;
+	};
+	A116465813825E2900859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
+		name = "CapturingDevice.cpp: 65";
+		rLen = 0;
+		rLoc = 2266;
+		rType = 0;
+		vrLen = 1781;
+		vrLoc = 0;
+	};
+	A116465913825E2900859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 47";
+		rLen = 0;
+		rLoc = 946;
+		rType = 0;
+		vrLen = 1031;
+		vrLoc = 34;
+	};
+	A116465A13825E2900859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 6";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 63;
+	};
+	A116465E1382602F00859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 28";
+		rLen = 0;
+		rLoc = 638;
+		rType = 0;
+		vrLen = 1038;
+		vrLoc = 83;
+	};
+	A1164665138260D900859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 28";
+		rLen = 0;
+		rLoc = 624;
+		rType = 0;
+		vrLen = 1033;
+		vrLoc = 102;
+	};
+	A116466B1382813100859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
+		name = "targeterApp.cpp: 37";
+		rLen = 0;
+		rLoc = 820;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 64;
+	};
+	A116466C1382813100859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A11644F913804C2600859CC6 /* ImageScanner.h */;
+		name = "ImageScanner.h: 21";
+		rLen = 0;
+		rLoc = 462;
+		rType = 0;
+		vrLen = 465;
+		vrLoc = 0;
+	};
+	A116466D1382813100859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A116443D137FBD9400859CC6 /* CapturingDevice.h */;
+		name = "CapturingDevice.h: 24";
+		rLen = 0;
+		rLoc = 600;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	A116466E1382813100859CC6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */;
+		name = "CapturingDevice.cpp: 65";
+		rLen = 0;
+		rLoc = 2266;
+		rType = 0;
+		vrLen = 1755;
+		vrLoc = 1096;
 	};
 	A1B94E17137D5E88003703F3 /* targeter */ = {
 		isa = PBXExecutable;
@@ -3319,7 +3484,7 @@
 		fRef = 00BAE6590E7ED9C10018A608 /* targeterApp.cpp */;
 		name = "targeterApp.cpp: 75";
 		rLen = 0;
-		rLoc = 919;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1782;
 		vrLoc = 1793;

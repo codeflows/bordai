@@ -84,9 +84,3 @@ void CapturingDevice::toggleOnOff() {
 bool CapturingDevice::hasSomething() {
 	return !mCaptures.empty();
 }
-
-inline DeviceName {
-	
-	void draw() {
-	}
-}
