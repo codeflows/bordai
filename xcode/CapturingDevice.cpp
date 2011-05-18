@@ -10,6 +10,7 @@ using namespace std;
 void CapturingDevice::setLensSize(const int lensWidth, const int lensHeight) {
 	mLensWidth = lensWidth;
 	mLensHeight = lensHeight;
+	mImageScanner.setImageSize(mLensWidth, mLensHeight);
 }
 
 void CapturingDevice::setImageScanner( ImageScanner scanner ) {

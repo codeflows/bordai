@@ -1,9 +1,10 @@
 #include "cinder/app/AppBasic.h"
+#include "cinder/params/Params.h"
 
 #include "CapturingDevice.h"
 
-#define WIDTH 800	
-#define HEIGHT 600
+#define WIDTH 640
+#define HEIGHT 480
 
 using namespace ci;
 using namespace ci::app;
@@ -19,16 +20,25 @@ class bordaiApp : public AppBasic {
 	
   private:
 	CapturingDevice mCamera;
+	params::InterfaceGl mParams;
+	int mCameraLensWidth, mCameraLensHeight;
 };
 
 void bordaiApp::prepareSettings(Settings *settings) {
-	settings -> setFrameRate(60.0f);
+	settings -> setFrameRate(25.0f);
 	settings -> setWindowSize(WIDTH, HEIGHT);
-	mCamera.setLensSize(WIDTH, HEIGHT);
-	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
 }
 
 void bordaiApp::setup() {
+	mCameraLensWidth = WIDTH;
+	mCameraLensHeight = HEIGHT;
+	
+	mParams = params::InterfaceGl("bordai", Vec2i(10, 10));
+	mParams.addParam("Lens width", &mCameraLensWidth, "min=256 max=1024 step=64 keyIncr=W keyDecr=w");
+	mParams.addParam("Lens height", &mCameraLensHeight, "min=256 max=1024 step=64 keyIncr=H keyDecr=h");
+	
+	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
+	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
 	mCamera.startCapturing();
 }
 
@@ -41,18 +51,20 @@ void bordaiApp::keyDown( KeyEvent event ) {
 	}
 }
 
-void bordaiApp::update() {	
+void bordaiApp::update() {
+	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
 	mCamera.bufferCaptured();
 }
 
-void bordaiApp::draw()
-{
+void bordaiApp::draw() {
 	gl::enableAlphaBlending();
 	gl::clear( Color::black() );
 	
 	if( mCamera.hasSomething() ) {
 		mCamera.draw();
 	}
+	
+	params::InterfaceGl::draw();
 }
 
 CINDER_APP_BASIC( bordaiApp, RendererGl )
