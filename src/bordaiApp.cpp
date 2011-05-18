@@ -22,20 +22,24 @@ class bordaiApp : public AppBasic {
 	CapturingDevice mCamera;
 	params::InterfaceGl mParams;
 	int mCameraLensWidth, mCameraLensHeight;
+	float mFrameRate;
 };
 
 void bordaiApp::prepareSettings(Settings *settings) {
-	settings -> setFrameRate(25.0f);
-	settings -> setWindowSize(WIDTH, HEIGHT);
+	mCameraLensWidth = WIDTH;
+	mCameraLensHeight = HEIGHT;
+	mFrameRate = 25.0f;
+	
+	settings -> setFrameRate(mFrameRate);
+	settings -> setWindowSize(mCameraLensWidth, mCameraLensHeight);
+	settings -> setResizable(true);
 }
 
 void bordaiApp::setup() {
-	mCameraLensWidth = WIDTH;
-	mCameraLensHeight = HEIGHT;
-	
-	mParams = params::InterfaceGl("bordai", Vec2i(10, 10));
-	mParams.addParam("Lens width", &mCameraLensWidth, "min=256 max=1024 step=64 keyIncr=W keyDecr=w");
-	mParams.addParam("Lens height", &mCameraLensHeight, "min=256 max=1024 step=64 keyIncr=H keyDecr=h");
+	mParams = params::InterfaceGl("bordai", Vec2i(50, 50));
+	mParams.addParam("Width", &mCameraLensWidth, "", true);
+	mParams.addParam("Height", &mCameraLensHeight, "", true);
+	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=F keyDecr=f");
 	
 	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
 	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
@@ -52,6 +56,9 @@ void bordaiApp::keyDown( KeyEvent event ) {
 }
 
 void bordaiApp::update() {
+	setFrameRate(mFrameRate);
+	mCameraLensWidth = getWindowWidth();
+	mCameraLensHeight = getWindowHeight();
 	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
 	mCamera.bufferCaptured();
 }
