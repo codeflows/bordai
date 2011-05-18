@@ -21,7 +21,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */; };
 		A11644FB13804C2600859CC6 /* ImageScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11644FA13804C2600859CC6 /* ImageScanner.cpp */; };
-		A116463B1381D00100859CC6 /* aGest.xml in Resources */ = {isa = PBXBuildFile; fileRef = A116463A1381D00100859CC6 /* aGest.xml */; };
+		A17D6983138444E000494C2A /* aGest.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17D6982138444E000494C2A /* aGest.xml */; };
 		A1D833251383050C00BF0B35 /* haarcascade_eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1D833121383050C00BF0B35 /* haarcascade_eye.xml */; };
 		A1D833261383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1D833131383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml */; };
 		A1D833271383050C00BF0B35 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1D833141383050C00BF0B35 /* haarcascade_frontalface_alt.xml */; };
@@ -64,11 +64,10 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* bordai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bordai.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A116443D137FBD9400859CC6 /* CapturingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CapturingDevice.h; path = ../../../cpp/cinder.git/blocks/opencv/include/CapturingDevice.h; sourceTree = "<group>"; };
 		A1164450137FBE5100859CC6 /* CapturingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CapturingDevice.cpp; sourceTree = "<group>"; };
 		A11644F913804C2600859CC6 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
 		A11644FA13804C2600859CC6 /* ImageScanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageScanner.cpp; sourceTree = "<group>"; };
-		A116463A1381D00100859CC6 /* aGest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = aGest.xml; path = ../../../Desktop/aGest.xml; sourceTree = SOURCE_ROOT; };
+		A17D6982138444E000494C2A /* aGest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = aGest.xml; path = ../resources/aGest.xml; sourceTree = SOURCE_ROOT; };
 		A1D833121383050C00BF0B35 /* haarcascade_eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye.xml; sourceTree = "<group>"; };
 		A1D833131383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
 		A1D833141383050C00BF0B35 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		A1D833241383050C00BF0B35 /* haarcascade_upperbody.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_upperbody.xml; sourceTree = "<group>"; };
 		A1DE9F16138316AB00DEE815 /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcv.a; path = "../lib/Cinder-OpenCV.git/lib/macosx/libcv.a"; sourceTree = SOURCE_ROOT; };
 		A1DE9F17138316AB00DEE815 /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcxcore.a; path = "../lib/Cinder-OpenCV.git/lib/macosx/libcxcore.a"; sourceTree = SOURCE_ROOT; };
+		A1F94637138445F0002CB7FC /* CapturingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturingDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +176,8 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				A1F94637138445F0002CB7FC /* CapturingDevice.h */,
 				A11644F913804C2600859CC6 /* ImageScanner.h */,
-				A116443D137FBD9400859CC6 /* CapturingDevice.h */,
 				32CA4F630368D1EE00C91783 /* bordai_Prefix.pch */,
 			);
 			name = Headers;
@@ -186,8 +186,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A17D6982138444E000494C2A /* aGest.xml */,
 				A1D833111383050C00BF0B35 /* opencv */,
-				A116463A1381D00100859CC6 /* aGest.xml */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
@@ -290,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
-				A116463B1381D00100859CC6 /* aGest.xml in Resources */,
 				A1D833251383050C00BF0B35 /* haarcascade_eye.xml in Resources */,
 				A1D833261383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
 				A1D833271383050C00BF0B35 /* haarcascade_frontalface_alt.xml in Resources */,
@@ -310,6 +309,7 @@
 				A1D833351383050C00BF0B35 /* haarcascade_profileface.xml in Resources */,
 				A1D833361383050C00BF0B35 /* haarcascade_righteye_2splits.xml in Resources */,
 				A1D833371383050C00BF0B35 /* haarcascade_upperbody.xml in Resources */,
+				A17D6983138444E000494C2A /* aGest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
