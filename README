@@ -1,4 +1,6 @@
-bordai, with cinder and opencv
+Bordai. Automatic tracking of items on a (Kanban) task board.
+
+Uses cinder and opencv.
 
 build-libs.sh to build libraries which are as github submodules under lib
 start.sh to build everything and start application
