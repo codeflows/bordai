@@ -37,45 +37,6 @@ void ImageScanner::scan( ci::Surface cameraImage ) {
 		scanLocation *= HISTOGRAM_SCALE;
 		mScans.push_back( scanLocation );
 	}
-
-	/*
-	float mThreshold = 70.0f;
-	float mBlobMin = 20.0f;
-	float mBlobMax = 80.0f;
-	// once the surface is avalable pass it to opencv
-	// had trouble here with bit depth. surface comes in full color, needed to crush it down
-	cv::Mat blurred, thresholded, thresholded2, output;
-	
-	cv::blur(histogramImage, blurred, cv::Size(10,10));
-	
-	// make two thresholded images one to display and one
-	// to pass to find contours since its process alters the image
-	cv::threshold( blurred, thresholded, mThreshold, 255, CV_THRESH_BINARY);
-	cv::threshold( blurred, thresholded2, mThreshold, 255, CV_THRESH_BINARY);
-	
-	// 2d vector to store the found contours
-	vector<vector<cv::Point> > contours;
-	// find em
-	cv::findContours(thresholded, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
-	
-	// loop the stored contours
-	for (vector<vector<cv::Point> >::iterator it=contours.begin() ; it < contours.end(); it++ ){
-		// center abd radius for current blob
-		cv::Point2f center;
-		float radius;
-		// convert the cuntour point to a matrix 
-		vector<cv::Point> pts = *it;
-		cv::Mat pointsMatrix = cv::Mat(pts);
-		// pass to min enclosing circle to make the blob 
-		cv::minEnclosingCircle(pointsMatrix, center, radius);
-		
-		if (radius > mBlobMin && radius < mBlobMax) {
-			Rectf hand (center.x - radius, center.y - radius, center.x + radius, center.y + radius);
-			hand *= HISTOGRAM_SCALE;
-			mScans.push_back( hand );
-		}
-	}
-	 */
 }
 
 void ImageScanner::draw() {
