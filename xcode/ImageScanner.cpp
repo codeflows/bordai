@@ -29,20 +29,27 @@ void ImageScanner::scan(Surface cameraImage) {
 	
 	for (vector<cv::Rect>::const_iterator aScan = newScans.begin(); aScan != newScans.end(); ++aScan) {
 		Rectf scanLocation( fromOcv( *aScan ) );
-		scanLocation *= HISTOGRAM_SCALE;
-		mHistograms.push_back( Histogram(fromOcv(grayCameraImage), scanLocation) );
+		mHistograms.push_back( Histogram(fromOcv(histogramImage), scanLocation) );
 	}
 }
 
 void ImageScanner::draw(ci::Rectf drawArea) {
 	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
-		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		gl::Texture img = gl::Texture(aHistogram->mHistogramImage);
+		gl::Texture histogramTexture = gl::Texture(aHistogram->mHistogramImage);
 		
-		float x = drawArea.getWidth() / (float)img.getWidth();
-		float y = drawArea.getHeight() / (float)img.getHeight();
+		float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
+		float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
 		Rectf sLoc = aHistogram->mScanLocation;
 		Rectf scaledScanLocation(sLoc.getX1() * x, sLoc.getY1() * y, sLoc.getX2() * x, sLoc.getY2() * y);
+		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		gl::drawSolidRect( scaledScanLocation );
+	}	
+}
+
+void ImageScanner::drawHistogram(ci::Rectf drawArea) {
+	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
+		gl::Texture histogramTexture = gl::Texture(aHistogram->mHistogramImage);
+		gl::draw(histogramTexture, drawArea);
+		histogramTexture.disable();
 	}	
 }

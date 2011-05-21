@@ -14,6 +14,7 @@ public:
 	
 	void scan(ci::Surface surface);
 	void draw(ci::Rectf drawArea);
+	void drawHistogram(ci::Rectf drawArea);
 
 protected:
 	class Histogram {

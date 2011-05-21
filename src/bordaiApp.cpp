@@ -3,12 +3,14 @@
 
 #include "CapturingDevice.h"
 
+#define CAMERA_WIDTH 640
+#define CAMERA_HEIGTH 480
+#define SCREEN_START_WIDTH 600
+#define SCREEN_START_HEIGHT 750
+
 using namespace ci;
 using namespace ci::app;
 using namespace std;
-
-static const int DEFAULT_WIDTH = 640;
-static const int DEFAULT_HEIGHT = 480;
 
 class bordaiApp : public AppBasic {
   public:
@@ -28,10 +30,10 @@ class bordaiApp : public AppBasic {
 
 void bordaiApp::prepareSettings(Settings *settings) {
 	mFrameRate = 25.0f;
-	mWindowSize = Vec2i(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	mWindowSize = Vec2i(SCREEN_START_WIDTH, SCREEN_START_HEIGHT);
 	
 	settings -> setFrameRate(mFrameRate);
-	settings -> setWindowSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	settings -> setWindowSize(mWindowSize.x, mWindowSize.y);
 	settings -> setResizable(true);
 }
 
@@ -42,7 +44,7 @@ void bordaiApp::setup() {
 	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");	
 	
 	mImageScanner = ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
-	mCamera.startCapturing(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	mCamera.startCapturing(CAMERA_WIDTH, CAMERA_HEIGTH);
 }
 
 void bordaiApp::keyDown( KeyEvent event ) {
@@ -70,9 +72,12 @@ void bordaiApp::draw() {
 		gl::setMatricesWindow( mWindowSize.x, mWindowSize.y );
 		glPushMatrix();
 		
-		Rectf drawArea( 0, 0, mWindowSize.x, mWindowSize.y );
-		mCamera.draw(drawArea);
-		mImageScanner.draw(drawArea);
+		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
+		mCamera.draw(cameraArea);
+		mImageScanner.draw(cameraArea);
+		
+		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
+		mImageScanner.drawHistogram(histogramArea);
 		
 		glPopMatrix();
 		
