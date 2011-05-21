@@ -18,8 +18,7 @@ public:
 			
 private:
 	int mLensWidth, mLensHeight;
-	ImageScanner mImageScanner;
-	std::vector<ci::Capture>		mCaptures;
-	std::vector<ci::gl::Texture>	mDeviceNameTextures;
-	std::vector<ci::gl::Texture>	mTextureBuffer;	
+	ImageScanner					mImageScanner;
+	ci::Capture						mCapture;
+	ci::gl::Texture					mCameraTexture;	
 };
