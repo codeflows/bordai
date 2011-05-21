@@ -13,11 +13,6 @@ ImageScanner::ImageScanner(std::string cascadeFilePath) {
 	mCascade.load( cascadeFilePath );
 }
 
-void ImageScanner::setImageSize(const int imageWidth, const int imageHeight) {
-	mImageWidth = imageWidth;
-	mImageHeight = imageHeight;
-}
-
 void ImageScanner::scan( ci::Surface cameraImage ) {
 	cv::Mat grayCameraImage( toOcv( cameraImage, CV_8UC1 ) );
 	int histogramWidth = cameraImage.getWidth() / HISTOGRAM_SCALE;
@@ -39,13 +34,9 @@ void ImageScanner::scan( ci::Surface cameraImage ) {
 	}
 }
 
-void ImageScanner::draw() {
+void ImageScanner::draw(ci::Rectf drawArea) {
 	for (vector<Rectf>::const_iterator aScan = mScans.begin(); aScan != mScans.end(); ++aScan) {
-		float scalex = getWindowWidth() / (float)mImageWidth;
-		float scaley = getWindowHeight() / (float)mImageHeight;
-		Rectf loc = *aScan;
-		loc.set(loc.getX1() * scalex, loc.getY1() * scaley, loc.getX2() * scalex, loc.getY2() * scaley);
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		gl::drawSolidRect( loc );
+		gl::drawSolidRect( *aScan );
 	}	
 }

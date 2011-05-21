@@ -42,9 +42,7 @@ void bordaiApp::setup() {
 	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");	
 	
 	mImageScanner = ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
-	mImageScanner.setImageSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-	mCamera.setLensSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-	mCamera.startCapturing();
+	mCamera.startCapturing(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 }
 
 void bordaiApp::keyDown( KeyEvent event ) {
@@ -59,12 +57,6 @@ void bordaiApp::keyDown( KeyEvent event ) {
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
 	mWindowSize = getWindowSize();
-	
-	int currentWidth = getWindowWidth();
-	int currentHeight = getWindowHeight();
-	mCamera.setLensSize(currentWidth, currentHeight);
-	mImageScanner.setImageSize(currentWidth, currentHeight);
-	
 	mCamera.bufferCaptured(mImageScanner);
 }
 
@@ -75,11 +67,12 @@ void bordaiApp::draw() {
 	if( mCamera.hasSomething() ) {
 		
 		gl::color( Color::white() );
-		gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
+		gl::setMatricesWindow( mWindowSize.x, mWindowSize.y );
 		glPushMatrix();
 		
-		mCamera.draw();
-		mImageScanner.draw();
+		Rectf drawArea( 0, 0, mWindowSize.x, mWindowSize.y );
+		mCamera.draw(drawArea);
+		mImageScanner.draw(drawArea);
 		
 		glPopMatrix();
 		

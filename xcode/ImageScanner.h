@@ -11,12 +11,10 @@ public:
 	ImageScanner();
 	ImageScanner(std::string cascadeFilePath);
 	
-	void setImageSize(const int imageWidth, const int imageHeight);
 	void scan(ci::Surface surface);
-	void draw();
+	void draw(ci::Rectf drawArea);
 	
 private:
-	int mImageWidth, mImageHeight;
 	cv::CascadeClassifier	mCascade;
 	std::vector<ci::Rectf>	mScans;
 };
