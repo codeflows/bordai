@@ -22,7 +22,7 @@ void ImageScanner::scan( ci::Surface cameraImage ) {
 	
 	cv::equalizeHist( histogramImage, histogramImage );
 	
-	mScans.clear();
+	mHistograms.clear();
 	
 	vector<cv::Rect> newScans;
 	mCascade.detectMultiScale( histogramImage, newScans );
@@ -30,13 +30,14 @@ void ImageScanner::scan( ci::Surface cameraImage ) {
 	for (vector<cv::Rect>::const_iterator aScan = newScans.begin(); aScan != newScans.end(); ++aScan) {
 		Rectf scanLocation( fromOcv( *aScan ) );
 		scanLocation *= HISTOGRAM_SCALE;
-		mScans.push_back( scanLocation );
+		mHistograms.push_back( Histogram(fromOcv(grayCameraImage), scanLocation) );
 	}
 }
 
 void ImageScanner::draw(ci::Rectf drawArea) {
-	for (vector<Rectf>::const_iterator aScan = mScans.begin(); aScan != mScans.end(); ++aScan) {
+	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		gl::drawSolidRect( *aScan );
+		ImageSourceRef img = aHistogram->mHistogramImage;
+		gl::drawSolidRect( aHistogram->mScanLocation );
 	}	
 }
