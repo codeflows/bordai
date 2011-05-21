@@ -3,12 +3,12 @@
 
 #include "CapturingDevice.h"
 
-#define WIDTH 640
-#define HEIGHT 480
-
 using namespace ci;
 using namespace ci::app;
 using namespace std;
+
+static const int DEFAULT_WIDTH = 640;
+static const int DEFAULT_HEIGHT = 480;
 
 class bordaiApp : public AppBasic {
   public:
@@ -20,29 +20,30 @@ class bordaiApp : public AppBasic {
 	
   private:
 	CapturingDevice mCamera;
+	ImageScanner mImageScanner;
 	params::InterfaceGl mParams;
-	int mCameraLensWidth, mCameraLensHeight;
+	Vec2i mWindowSize;
 	float mFrameRate;
 };
 
 void bordaiApp::prepareSettings(Settings *settings) {
-	mCameraLensWidth = WIDTH;
-	mCameraLensHeight = HEIGHT;
 	mFrameRate = 25.0f;
+	mWindowSize = Vec2i(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	
 	settings -> setFrameRate(mFrameRate);
-	settings -> setWindowSize(mCameraLensWidth, mCameraLensHeight);
+	settings -> setWindowSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	settings -> setResizable(true);
 }
 
 void bordaiApp::setup() {
-	mParams = params::InterfaceGl("bordai", Vec2i(50, 50));
-	mParams.addParam("Width", &mCameraLensWidth, "", true);
-	mParams.addParam("Height", &mCameraLensHeight, "", true);
-	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=F keyDecr=f");
+	mParams = params::InterfaceGl("bordai", Vec2i(200, 100));
+	mParams.addParam("Screen width", &mWindowSize.x, "", true);
+	mParams.addParam("Screen height", &mWindowSize.y, "", true);
+	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");	
 	
-	mCamera.setImageScanner(ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) ));
-	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
+	mImageScanner = ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
+	mImageScanner.setImageSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	mCamera.setLensSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	mCamera.startCapturing();
 }
 
@@ -57,10 +58,14 @@ void bordaiApp::keyDown( KeyEvent event ) {
 
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
-	mCameraLensWidth = getWindowWidth();
-	mCameraLensHeight = getWindowHeight();
-	mCamera.setLensSize(mCameraLensWidth, mCameraLensHeight);
-	mCamera.bufferCaptured();
+	mWindowSize = getWindowSize();
+	
+	int currentWidth = getWindowWidth();
+	int currentHeight = getWindowHeight();
+	mCamera.setLensSize(currentWidth, currentHeight);
+	mImageScanner.setImageSize(currentWidth, currentHeight);
+	
+	mCamera.bufferCaptured(mImageScanner);
 }
 
 void bordaiApp::draw() {
@@ -68,7 +73,16 @@ void bordaiApp::draw() {
 	gl::clear( Color::black() );
 	
 	if( mCamera.hasSomething() ) {
+		
+		gl::color( Color::white() );
+		gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
+		glPushMatrix();
+		
 		mCamera.draw();
+		mImageScanner.draw();
+		
+		glPopMatrix();
+		
 	}
 	
 	params::InterfaceGl::draw();

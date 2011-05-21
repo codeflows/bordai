@@ -9,16 +9,14 @@
 class CapturingDevice {
 public:	
 	void setLensSize(const int lensWidth, const int lensHeigth);
-	void setImageScanner( ImageScanner scanner );
 	void startCapturing();
-	void bufferCaptured();
+	void bufferCaptured(ImageScanner &mImageScanner);
 	void draw();
 	void toggleOnOff();
 	bool hasSomething();
 			
 private:
 	int mLensWidth, mLensHeight;
-	ImageScanner					mImageScanner;
-	ci::Capture						mCapture;
-	ci::gl::Texture					mCameraTexture;	
+	ci::Capture	mCapture;
+	ci::gl::Texture mCameraTexture;	
 };
