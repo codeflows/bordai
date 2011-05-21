@@ -22,34 +22,35 @@ void ImageScanner::scan(Surface cameraImage) {
 	
 	cv::equalizeHist( histogramImage, histogramImage );
 	
-	mHistograms.clear();
+	mHistogram.mScans.clear();
 	
 	vector<cv::Rect> newScans;
 	mCascade.detectMultiScale( histogramImage, newScans );
 	
+	mHistogram.mHistogramImage = fromOcv(histogramImage);
+	
 	for (vector<cv::Rect>::const_iterator aScan = newScans.begin(); aScan != newScans.end(); ++aScan) {
 		Rectf scanLocation( fromOcv( *aScan ) );
-		mHistograms.push_back( Histogram(fromOcv(histogramImage), scanLocation) );
+		mHistogram.mScans.push_back( scanLocation );
 	}
 }
 
 void ImageScanner::draw(ci::Rectf drawArea) {
-	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
-		gl::Texture histogramTexture = gl::Texture(aHistogram->mHistogramImage);
-		
-		float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
-		float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
-		Rectf sLoc = aHistogram->mScanLocation;
+	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
+	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
+	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
+	
+	for (vector<Rectf>::const_iterator aScan = mHistogram.mScans.begin(); aScan != mHistogram.mScans.end(); ++aScan) {
+		Rectf sLoc = *aScan;
 		Rectf scaledScanLocation(sLoc.getX1() * x, sLoc.getY1() * y, sLoc.getX2() * x, sLoc.getY2() * y);
+		
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		gl::drawSolidRect( scaledScanLocation );
 	}	
 }
 
 void ImageScanner::drawHistogram(ci::Rectf drawArea) {
-	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
-		gl::Texture histogramTexture = gl::Texture(aHistogram->mHistogramImage);
-		gl::draw(histogramTexture, drawArea);
-		histogramTexture.disable();
-	}	
+	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
+	gl::draw(histogramTexture, drawArea);
+	histogramTexture.disable();
 }

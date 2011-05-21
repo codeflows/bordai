@@ -19,15 +19,13 @@ public:
 protected:
 	class Histogram {
 	public:
-		Histogram(ci::ImageSourceRef histogramImage, ci::Rectf scanLocation) {
-			mHistogramImage = histogramImage;
-			mScanLocation = scanLocation;
-		}
-		ci::ImageSourceRef mHistogramImage;
-		ci::Rectf mScanLocation;
+		Histogram() {}
+		
+		ci::ImageSourceRef		mHistogramImage;
+		std::vector<ci::Rectf>	mScans;
 	};
 	
 private:
 	cv::CascadeClassifier	mCascade;
-	std::vector<Histogram>	mHistograms;
+	Histogram				mHistogram;
 };
