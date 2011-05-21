@@ -9,11 +9,11 @@ using namespace std;
 
 ImageScanner::ImageScanner() {}
 
-ImageScanner::ImageScanner(std::string cascadeFilePath) {
+ImageScanner::ImageScanner(string cascadeFilePath) {
 	mCascade.load( cascadeFilePath );
 }
 
-void ImageScanner::scan( ci::Surface cameraImage ) {
+void ImageScanner::scan(Surface cameraImage) {
 	cv::Mat grayCameraImage( toOcv( cameraImage, CV_8UC1 ) );
 	int histogramWidth = cameraImage.getWidth() / HISTOGRAM_SCALE;
 	int histogramHeigth = cameraImage.getHeight() / HISTOGRAM_SCALE;
@@ -37,7 +37,12 @@ void ImageScanner::scan( ci::Surface cameraImage ) {
 void ImageScanner::draw(ci::Rectf drawArea) {
 	for (vector<Histogram>::const_iterator aHistogram = mHistograms.begin(); aHistogram != mHistograms.end(); ++aHistogram) {
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		ImageSourceRef img = aHistogram->mHistogramImage;
-		gl::drawSolidRect( aHistogram->mScanLocation );
+		gl::Texture img = gl::Texture(aHistogram->mHistogramImage);
+		
+		float x = drawArea.getWidth() / (float)img.getWidth();
+		float y = drawArea.getHeight() / (float)img.getHeight();
+		Rectf sLoc = aHistogram->mScanLocation;
+		Rectf scaledScanLocation(sLoc.getX1() * x, sLoc.getY1() * y, sLoc.getX2() * x, sLoc.getY2() * y);
+		gl::drawSolidRect( scaledScanLocation );
 	}	
 }
