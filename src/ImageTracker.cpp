@@ -41,11 +41,25 @@ void ImageTracker::drawTrackings(ci::Rectf drawArea) {
 	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
 	
 	for (vector<Rectf>::const_iterator aScan = mHistogram.mScans.begin(); aScan != mHistogram.mScans.end(); ++aScan) {
-		Rectf sLoc = *aScan;
-		Rectf scaledScanLocation(sLoc.getX1() * x, sLoc.getY1() * y, sLoc.getX2() * x, sLoc.getY2() * y);
+		Rectf scanLocation = *aScan;
+		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
 		
-		gl::drawSolidRect( scaledScanLocation );
-	}	
+		scaledLoc.x1 *= x;
+		scaledLoc.x2 *= x;
+		scaledLoc.y1 *= y;
+		scaledLoc.y2 *= y;
+		
+		if(drawArea.x1 > 0.0f) {
+			scaledLoc.x1 += drawArea.x1;
+			scaledLoc.x2 += drawArea.x1;
+		}
+		if(drawArea.y1 > 0.0f) {
+			scaledLoc.y1 += drawArea.y1;
+			scaledLoc.y2 += drawArea.y1;
+		}
+		
+		gl::drawSolidRect( scaledLoc );
+	}
 }
 
 void ImageTracker::drawHistogram(ci::Rectf drawArea) {

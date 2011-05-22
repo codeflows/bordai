@@ -91,6 +91,7 @@ void bordaiApp::draw() {
 		
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		mTracker.drawTrackings(cameraArea);
+		mTracker.drawTrackings(histogramArea);
 		
 		glPopMatrix();
 		
