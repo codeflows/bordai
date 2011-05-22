@@ -2,6 +2,7 @@
 #include "cinder/params/Params.h"
 
 #include "CapturingDevice.h"
+#include "ImageTracker.h"
 
 #define CAMERA_WIDTH 640
 #define CAMERA_HEIGTH 480
@@ -22,7 +23,7 @@ class bordaiApp : public AppBasic {
 	
   private:
 	CapturingDevice mCamera;
-	ImageScanner mImageScanner;
+	ImageTracker mTracker;
 	params::InterfaceGl mParams;
 	Vec2i mWindowSize;
 	float mFrameRate;
@@ -43,7 +44,7 @@ void bordaiApp::setup() {
 	mParams.addParam("Screen height", &mWindowSize.y, "", true);
 	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");	
 	
-	mImageScanner = ImageScanner( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
+	mTracker = ImageTracker( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
 	mCamera.startCapturing(CAMERA_WIDTH, CAMERA_HEIGTH);
 }
 
@@ -59,7 +60,7 @@ void bordaiApp::keyDown( KeyEvent event ) {
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
 	mWindowSize = getWindowSize();
-	mCamera.bufferCaptured(mImageScanner);
+	mCamera.bufferCaptured(mTracker);
 }
 
 void bordaiApp::draw() {
@@ -75,10 +76,10 @@ void bordaiApp::draw() {
 		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
 		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
 		mCamera.draw(cameraArea);
-		mImageScanner.drawHistogram(histogramArea);
+		mTracker.drawHistogram(histogramArea);
 		
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		mImageScanner.draw(cameraArea);
+		mTracker.drawTrackings(cameraArea);
 		
 		glPopMatrix();
 		

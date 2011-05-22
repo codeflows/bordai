@@ -7,13 +7,13 @@
 #include "CinderOpenCv.h"
 #include <vector>
 
-class ImageScanner {
+class ImageTracker {
 public:
-	ImageScanner();
-	ImageScanner(std::string cascadeFilePath);
+	ImageTracker();
+	ImageTracker(std::string cascadeFilePath);
 	
-	void scan(ci::Surface surface);
-	void draw(ci::Rectf drawArea);
+	void scanTrackables(ci::Surface surface);
+	void drawTrackings(ci::Rectf drawArea);
 	void drawHistogram(ci::Rectf drawArea);
 
 protected:

@@ -1,19 +1,19 @@
 #define HISTOGRAM_SCALE 2
 
 #include "cinder/app/AppBasic.h"
-#include "ImageScanner.h"
+#include "ImageTracker.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-ImageScanner::ImageScanner() {}
+ImageTracker::ImageTracker() {}
 
-ImageScanner::ImageScanner(string cascadeFilePath) {
+ImageTracker::ImageTracker(string cascadeFilePath) {
 	mCascade.load( cascadeFilePath );
 }
 
-void ImageScanner::scan(Surface cameraImage) {
+void ImageTracker::scanTrackables(Surface cameraImage) {
 	cv::Mat grayCameraImage( toOcv( cameraImage, CV_8UC1 ) );
 	int histogramWidth = cameraImage.getWidth() / HISTOGRAM_SCALE;
 	int histogramHeigth = cameraImage.getHeight() / HISTOGRAM_SCALE;
@@ -35,7 +35,7 @@ void ImageScanner::scan(Surface cameraImage) {
 	}
 }
 
-void ImageScanner::draw(ci::Rectf drawArea) {
+void ImageTracker::drawTrackings(ci::Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
 	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
@@ -48,7 +48,7 @@ void ImageScanner::draw(ci::Rectf drawArea) {
 	}	
 }
 
-void ImageScanner::drawHistogram(ci::Rectf drawArea) {
+void ImageTracker::drawHistogram(ci::Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	gl::draw(histogramTexture, drawArea);
 	histogramTexture.disable();

@@ -13,11 +13,11 @@ void CapturingDevice::startCapturing(const int lensWidth, const int lensHeight) 
 	mCameraTexture = gl::Texture();
 }
 
-void CapturingDevice::bufferCaptured(ImageScanner &imageScanner) {
+void CapturingDevice::bufferCaptured(ImageTracker &tracker) {
 	if( mCapture.checkNewFrame() ) {
 		Surface8u capturedSurface = mCapture.getSurface();
 		mCameraTexture = gl::Texture( capturedSurface );
-		imageScanner.scan(capturedSurface);
+		tracker.scanTrackables(capturedSurface);
 	}
 }
 
