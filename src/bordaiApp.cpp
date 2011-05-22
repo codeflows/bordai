@@ -73,11 +73,12 @@ void bordaiApp::draw() {
 		glPushMatrix();
 		
 		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
-		mCamera.draw(cameraArea);
-		mImageScanner.draw(cameraArea);
-		
 		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
+		mCamera.draw(cameraArea);
 		mImageScanner.drawHistogram(histogramArea);
+		
+		gl::color( ColorA( 1, 1, 0, 0.45f ) );
+		mImageScanner.draw(cameraArea);
 		
 		glPopMatrix();
 		

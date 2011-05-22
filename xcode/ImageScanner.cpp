@@ -44,7 +44,6 @@ void ImageScanner::draw(ci::Rectf drawArea) {
 		Rectf sLoc = *aScan;
 		Rectf scaledScanLocation(sLoc.getX1() * x, sLoc.getY1() * y, sLoc.getX2() * x, sLoc.getY2() * y);
 		
-		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		gl::drawSolidRect( scaledScanLocation );
 	}	
 }
