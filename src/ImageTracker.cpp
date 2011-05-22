@@ -14,6 +14,9 @@ ImageTracker::ImageTracker(string cascadeFilePath) {
 }
 
 void ImageTracker::scanTrackables(Surface cameraImage) {
+	cv::Mat colorCameraImage( toOcv( cameraImage ) );
+	mCardDetector.findSquares(colorCameraImage, mHistogram.mStoryCards);
+	
 	cv::Mat grayCameraImage( toOcv( cameraImage, CV_8UC1 ) );
 	int histogramWidth = cameraImage.getWidth() / HISTOGRAM_SCALE;
 	int histogramHeigth = cameraImage.getHeight() / HISTOGRAM_SCALE;
@@ -35,7 +38,7 @@ void ImageTracker::scanTrackables(Surface cameraImage) {
 	}
 }
 
-void ImageTracker::drawTrackings(ci::Rectf drawArea) {
+void ImageTracker::drawTrackings(Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
 	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
@@ -58,9 +61,25 @@ void ImageTracker::drawTrackings(ci::Rectf drawArea) {
 		
 		gl::drawSolidRect( scaledLoc );
 	}
+	
+	vector<Vec2f> polyPoints;
+	for(vector<vector<cv::Point> >::const_iterator aCardPoint = mHistogram.mStoryCards.begin(); aCardPoint != mHistogram.mStoryCards.end(); ++aCardPoint) {
+		polyPoints.clear();
+		vector<cv::Point> points = *aCardPoint;
+		for(vector<cv::Point>::const_iterator aPoint = points.begin(); aPoint != points.end(); ++aPoint) {
+			Vec2f dot(fromOcv(*aPoint));
+			dot.x *= x / (float)HISTOGRAM_SCALE;
+			dot.y *= y / (float)HISTOGRAM_SCALE;
+			dot.x += drawArea.x1;
+			dot.y += drawArea.y1;
+			polyPoints.push_back(dot);
+		}
+		PolyLine2f polyps(polyPoints);
+		gl::draw(polyps);
+	}
 }
 
-void ImageTracker::drawHistogram(ci::Rectf drawArea) {
+void ImageTracker::drawHistogram(Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	gl::draw(histogramTexture, drawArea);
 	histogramTexture.disable();

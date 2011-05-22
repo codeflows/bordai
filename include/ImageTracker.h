@@ -5,6 +5,7 @@
 #include "cinder/Surface.h"
 #include "cinder/CinderMath.h"
 #include "CinderOpenCv.h"
+#include "StoryCardDetector.h"
 #include <vector>
 
 class ImageTracker {
@@ -23,9 +24,11 @@ protected:
 		
 		ci::ImageSourceRef		mHistogramImage;
 		std::vector<ci::Rectf>	mScans;
+		std::vector<std::vector<cv::Point> > mStoryCards;
 	};
 	
 private:
 	cv::CascadeClassifier	mCascade;
 	Histogram				mHistogram;
+	StoryCardDetector		mCardDetector;
 };
