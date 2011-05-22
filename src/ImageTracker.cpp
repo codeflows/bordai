@@ -44,19 +44,17 @@ void ImageTracker::drawTrackings(ci::Rectf drawArea) {
 		Rectf scanLocation = *aScan;
 		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
 		
+		// scale to screen resolution
 		scaledLoc.x1 *= x;
 		scaledLoc.x2 *= x;
 		scaledLoc.y1 *= y;
 		scaledLoc.y2 *= y;
-		
-		if(drawArea.x1 > 0.0f) {
-			scaledLoc.x1 += drawArea.x1;
-			scaledLoc.x2 += drawArea.x1;
-		}
-		if(drawArea.y1 > 0.0f) {
-			scaledLoc.y1 += drawArea.y1;
-			scaledLoc.y2 += drawArea.y1;
-		}
+
+		// move to drawing area
+		scaledLoc.x1 += drawArea.x1;
+		scaledLoc.x2 += drawArea.x1;
+		scaledLoc.y1 += drawArea.y1;
+		scaledLoc.y2 += drawArea.y1;
 		
 		gl::drawSolidRect( scaledLoc );
 	}
