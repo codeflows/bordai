@@ -1,19 +1,19 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/Text.h"
 #include "cinder/Surface.h"
-#include "CapturingDevice.h"
+#include "VideoCamera.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-void CapturingDevice::startCapturing(const int lensWidth, const int lensHeight) {
+void VideoCamera::startCapturing(const int lensWidth, const int lensHeight) {
 	mCapture = Capture( lensWidth, lensHeight );
 	mCapture.start();
 	mCameraTexture = gl::Texture();
 }
 
-void CapturingDevice::bufferCaptured(ImageTracker &tracker) {
+void VideoCamera::bufferCaptured(ImageTracker &tracker) {
 	if( mCapture.checkNewFrame() ) {
 		Surface8u capturedSurface = mCapture.getSurface();
 		mCameraTexture = gl::Texture( capturedSurface );
@@ -21,15 +21,15 @@ void CapturingDevice::bufferCaptured(ImageTracker &tracker) {
 	}
 }
 
-void CapturingDevice::draw(Rectf drawArea) {
+void VideoCamera::draw(Rectf drawArea) {
 	gl::draw(mCameraTexture, drawArea);
 	mCameraTexture.disable();
 }
 
-void CapturingDevice::toggleOnOff() {
+void VideoCamera::toggleOnOff() {
 	mCapture.isCapturing() ? mCapture.stop() : mCapture.start();
 }
 
-bool CapturingDevice::hasSomething() {
+bool VideoCamera::hasSomething() {
 	return mCameraTexture ? true : false;
 }

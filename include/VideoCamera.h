@@ -2,11 +2,11 @@
 
 #include "cinder/Capture.h"
 #include "cinder/gl/Texture.h"
-#include "CapturingDevice.h"
+#include "VideoCamera.h"
 #include "ImageTracker.h"
 #include <vector>
 
-class CapturingDevice {
+class VideoCamera {
 public:	
 	void startCapturing(const int lensWidth, const int lensHeigth);
 	void bufferCaptured(ImageTracker &tracker);

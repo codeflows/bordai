@@ -1,7 +1,7 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/params/Params.h"
 
-#include "CapturingDevice.h"
+#include "VideoCamera.h"
 #include "ImageTracker.h"
 
 #define CAMERA_WIDTH 640
@@ -22,7 +22,7 @@ class bordaiApp : public AppBasic {
 	void draw();
 	
   private:
-	CapturingDevice mCamera;
+	VideoCamera mCamera;
 	ImageTracker mTracker;
 	params::InterfaceGl mParams;
 	Vec2i mWindowSize;
