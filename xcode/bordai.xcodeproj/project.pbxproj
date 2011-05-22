@@ -13,14 +13,15 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		00BAE65A0E7ED9C10018A608 /* bordaiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BAE6590E7ED9C10018A608 /* bordaiApp.cpp */; };
 		00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 00CCAF14116A9FEE008396D5 /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1164450137FBE5100859CC6 /* CapturingDevice.cpp */; };
-		A11644FB13804C2600859CC6 /* ImageScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11644FA13804C2600859CC6 /* ImageScanner.cpp */; };
+		A10679AA138913D70085EB46 /* bordaiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A7138913D70085EB46 /* bordaiApp.cpp */; };
+		A10679AB138913D70085EB46 /* CapturingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A8138913D70085EB46 /* CapturingDevice.cpp */; };
+		A10679AC138913D70085EB46 /* ImageScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A9138913D70085EB46 /* ImageScanner.cpp */; };
+		A10679BB138914720085EB46 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10679BA138914720085EB46 /* Info.plist */; };
 		A17D6983138444E000494C2A /* aGest.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17D6982138444E000494C2A /* aGest.xml */; };
 		A1D833251383050C00BF0B35 /* haarcascade_eye.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1D833121383050C00BF0B35 /* haarcascade_eye.xml */; };
 		A1D833261383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = A1D833131383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml */; };
@@ -52,21 +53,21 @@
 		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		00BAE6590E7ED9C10018A608 /* bordaiApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bordaiApp.cpp; path = ../src/bordaiApp.cpp; sourceTree = SOURCE_ROOT; };
 		00CCAF14116A9FEE008396D5 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = SOURCE_ROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* bordai_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bordai_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* bordai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bordai.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1164450137FBE5100859CC6 /* CapturingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CapturingDevice.cpp; sourceTree = "<group>"; };
+		A10679A7138913D70085EB46 /* bordaiApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bordaiApp.cpp; sourceTree = "<group>"; };
+		A10679A8138913D70085EB46 /* CapturingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CapturingDevice.cpp; sourceTree = "<group>"; };
+		A10679A9138913D70085EB46 /* ImageScanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageScanner.cpp; sourceTree = "<group>"; };
+		A10679BA138914720085EB46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		A10679C2138914EA0085EB46 /* bordai_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bordai_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		A11644F913804C2600859CC6 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
-		A11644FA13804C2600859CC6 /* ImageScanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageScanner.cpp; sourceTree = "<group>"; };
 		A17D6982138444E000494C2A /* aGest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = aGest.xml; path = ../resources/aGest.xml; sourceTree = SOURCE_ROOT; };
 		A1D833121383050C00BF0B35 /* haarcascade_eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye.xml; sourceTree = "<group>"; };
 		A1D833131383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
@@ -118,12 +119,13 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				00BAE6590E7ED9C10018A608 /* bordaiApp.cpp */,
-				A1164450137FBE5100859CC6 /* CapturingDevice.cpp */,
-				A11644FA13804C2600859CC6 /* ImageScanner.cpp */,
+				A10679A7138913D70085EB46 /* bordaiApp.cpp */,
+				A10679A8138913D70085EB46 /* CapturingDevice.cpp */,
+				A10679A9138913D70085EB46 /* ImageScanner.cpp */,
 			);
 			name = Source;
-			sourceTree = "<group>";
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
@@ -176,23 +178,25 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				A10679C2138914EA0085EB46 /* bordai_Prefix.pch */,
 				A1F94637138445F0002CB7FC /* CapturingDevice.h */,
 				A11644F913804C2600859CC6 /* ImageScanner.h */,
-				32CA4F630368D1EE00C91783 /* bordai_Prefix.pch */,
 			);
 			name = Headers;
-			sourceTree = "<group>";
+			path = ../include;
+			sourceTree = SOURCE_ROOT;
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A10679BA138914720085EB46 /* Info.plist */,
 				A17D6982138444E000494C2A /* aGest.xml */,
 				A1D833111383050C00BF0B35 /* opencv */,
-				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
+			path = ../resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
@@ -310,6 +314,7 @@
 				A1D833361383050C00BF0B35 /* haarcascade_righteye_2splits.xml in Resources */,
 				A1D833371383050C00BF0B35 /* haarcascade_upperbody.xml in Resources */,
 				A17D6983138444E000494C2A /* aGest.xml in Resources */,
+				A10679BB138914720085EB46 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,9 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BAE65A0E7ED9C10018A608 /* bordaiApp.cpp in Sources */,
-				A1164451137FBE5100859CC6 /* CapturingDevice.cpp in Sources */,
-				A11644FB13804C2600859CC6 /* ImageScanner.cpp in Sources */,
+				A10679AA138913D70085EB46 /* bordaiApp.cpp in Sources */,
+				A10679AB138913D70085EB46 /* CapturingDevice.cpp in Sources */,
+				A10679AC138913D70085EB46 /* ImageScanner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +397,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../lib/boost;
+				INFOPLIST_FILE = "";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
@@ -410,6 +416,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../lib/boost;
+				INFOPLIST_FILE = "";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
