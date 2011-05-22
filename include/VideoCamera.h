@@ -9,9 +9,10 @@
 class VideoCamera {
 public:	
 	void startCapturing(const int lensWidth, const int lensHeigth);
+	void stopCapturing();
 	void bufferCaptured(ImageTracker &tracker);
 	void draw(ci::Rectf drawArea);
-	void toggleOnOff();
+	void togglePause();
 	bool hasSomething();
 			
 private:

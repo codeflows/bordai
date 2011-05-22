@@ -13,6 +13,11 @@ void VideoCamera::startCapturing(const int lensWidth, const int lensHeight) {
 	mCameraTexture = gl::Texture();
 }
 
+void VideoCamera::stopCapturing() {
+	mCapture.stop();
+	mCameraTexture = gl::Texture();
+}
+
 void VideoCamera::bufferCaptured(ImageTracker &tracker) {
 	if( mCapture.checkNewFrame() ) {
 		Surface8u capturedSurface = mCapture.getSurface();
@@ -26,7 +31,7 @@ void VideoCamera::draw(Rectf drawArea) {
 	mCameraTexture.disable();
 }
 
-void VideoCamera::toggleOnOff() {
+void VideoCamera::togglePause() {
 	mCapture.isCapturing() ? mCapture.stop() : mCapture.start();
 }
 

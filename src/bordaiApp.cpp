@@ -25,13 +25,14 @@ class bordaiApp : public AppBasic {
 	VideoCamera mCamera;
 	ImageTracker mTracker;
 	params::InterfaceGl mParams;
-	Vec2i mWindowSize;
+	Vec2i mWindowSize, mCameraLensSize;
 	float mFrameRate;
 };
 
 void bordaiApp::prepareSettings(Settings *settings) {
 	mFrameRate = 25.0f;
 	mWindowSize = Vec2i(SCREEN_START_WIDTH, SCREEN_START_HEIGHT);
+	mCameraLensSize = Vec2i(CAMERA_WIDTH, CAMERA_HEIGTH);
 	
 	settings -> setFrameRate(mFrameRate);
 	settings -> setWindowSize(mWindowSize.x, mWindowSize.y);
@@ -39,22 +40,32 @@ void bordaiApp::prepareSettings(Settings *settings) {
 }
 
 void bordaiApp::setup() {
-	mParams = params::InterfaceGl("bordai", Vec2i(200, 100));
+	mParams = params::InterfaceGl("bordai", Vec2i(300, 175));
 	mParams.addParam("Screen width", &mWindowSize.x, "", true);
 	mParams.addParam("Screen height", &mWindowSize.y, "", true);
-	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");	
+	mParams.addParam("Camera width", &mCameraLensSize.x, "min=128 max=1024 step=64 keyIncr=W keyDecr=w");
+	mParams.addParam("Camera height", &mCameraLensSize.y, "min=128 max=1024 step=64 keyIncr=H keyDecr=h");
+	mParams.addSeparator();
+	mParams.addText("Press space to apply camera resolution");
+	mParams.addSeparator();
+	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");
 	
 	mTracker = ImageTracker( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
-	mCamera.startCapturing(CAMERA_WIDTH, CAMERA_HEIGTH);
+	mCamera.startCapturing(mCameraLensSize.x, mCameraLensSize.y);
 }
 
 void bordaiApp::keyDown( KeyEvent event ) {
-	if(event.getChar() == 'f') {
+	char c = event.getChar();
+	if(c == 'f') {
 		setFullScreen( !isFullScreen() );
 	}
-	if(event.getChar() == ' ') {
-		mCamera.toggleOnOff();
+	if(c == 'p' || c == 'P') {
+		mCamera.togglePause();
 	}
+	if(c == ' ') {
+		mCamera.stopCapturing();
+		mCamera.startCapturing(mCameraLensSize.x, mCameraLensSize.y);
+	}	
 }
 
 void bordaiApp::update() {
