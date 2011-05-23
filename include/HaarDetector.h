@@ -8,10 +8,10 @@
 #include "StoryCardDetector.h"
 #include <vector>
 
-class ImageTracker {
+class HaarDetector {
 public:
-	ImageTracker();
-	ImageTracker(std::string cascadeFilePath);
+	HaarDetector();
+	HaarDetector(std::string cascadeFilePath);
 	
 	void scanTrackables(ci::Surface surface);
 	void drawTrackings(ci::Rectf drawArea);

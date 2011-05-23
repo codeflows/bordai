@@ -20,7 +20,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		A10679AA138913D70085EB46 /* bordaiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A7138913D70085EB46 /* bordaiApp.cpp */; };
 		A10679AB138913D70085EB46 /* VideoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A8138913D70085EB46 /* VideoCamera.cpp */; };
-		A10679AC138913D70085EB46 /* ImageTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A9138913D70085EB46 /* ImageTracker.cpp */; };
+		A10679AC138913D70085EB46 /* HaarDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10679A9138913D70085EB46 /* HaarDetector.cpp */; };
 		A10679BB138914720085EB46 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10679BA138914720085EB46 /* Info.plist */; };
 		A1067A8A13898B550085EB46 /* StoryCardDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1067A8913898B550085EB46 /* StoryCardDetector.cpp */; };
 		A17D6983138444E000494C2A /* aGest.xml in Resources */ = {isa = PBXBuildFile; fileRef = A17D6982138444E000494C2A /* aGest.xml */; };
@@ -65,13 +65,13 @@
 		8D1107320486CEB800E47090 /* bordai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bordai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10679A7138913D70085EB46 /* bordaiApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bordaiApp.cpp; sourceTree = "<group>"; };
 		A10679A8138913D70085EB46 /* VideoCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoCamera.cpp; sourceTree = "<group>"; };
-		A10679A9138913D70085EB46 /* ImageTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageTracker.cpp; sourceTree = "<group>"; };
+		A10679A9138913D70085EB46 /* HaarDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HaarDetector.cpp; sourceTree = "<group>"; };
 		A10679BA138914720085EB46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		A10679C2138914EA0085EB46 /* bordai_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bordai_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		A1067A8913898B550085EB46 /* StoryCardDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StoryCardDetector.cpp; sourceTree = "<group>"; };
 		A1067A9613898BC90085EB46 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
 		A1067A9713898BC90085EB46 /* StoryCardDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCardDetector.h; sourceTree = "<group>"; };
-		A11644F913804C2600859CC6 /* ImageTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTracker.h; sourceTree = "<group>"; };
+		A11644F913804C2600859CC6 /* HaarDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaarDetector.h; sourceTree = "<group>"; };
 		A17D6982138444E000494C2A /* aGest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = aGest.xml; path = ../resources/aGest.xml; sourceTree = SOURCE_ROOT; };
 		A1D833121383050C00BF0B35 /* haarcascade_eye.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye.xml; sourceTree = "<group>"; };
 		A1D833131383050C00BF0B35 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			children = (
 				A10679A7138913D70085EB46 /* bordaiApp.cpp */,
 				A10679A8138913D70085EB46 /* VideoCamera.cpp */,
-				A10679A9138913D70085EB46 /* ImageTracker.cpp */,
+				A10679A9138913D70085EB46 /* HaarDetector.cpp */,
 				A1067A8913898B550085EB46 /* StoryCardDetector.cpp */,
 			);
 			name = Source;
@@ -187,7 +187,7 @@
 				A1067A9713898BC90085EB46 /* StoryCardDetector.h */,
 				A10679C2138914EA0085EB46 /* bordai_Prefix.pch */,
 				A1F94637138445F0002CB7FC /* VideoCamera.h */,
-				A11644F913804C2600859CC6 /* ImageTracker.h */,
+				A11644F913804C2600859CC6 /* HaarDetector.h */,
 			);
 			name = Headers;
 			path = ../include;
@@ -334,7 +334,7 @@
 			files = (
 				A10679AA138913D70085EB46 /* bordaiApp.cpp in Sources */,
 				A10679AB138913D70085EB46 /* VideoCamera.cpp in Sources */,
-				A10679AC138913D70085EB46 /* ImageTracker.cpp in Sources */,
+				A10679AC138913D70085EB46 /* HaarDetector.cpp in Sources */,
 				A1067A8A13898B550085EB46 /* StoryCardDetector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,11 +18,11 @@ void VideoCamera::stopCapturing() {
 	mCameraTexture = gl::Texture();
 }
 
-void VideoCamera::bufferCaptured(ImageTracker &tracker) {
+void VideoCamera::bufferCaptured(HaarDetector &detector) {
 	if( mCapture.checkNewFrame() ) {
 		Surface8u capturedSurface = mCapture.getSurface();
 		mCameraTexture = gl::Texture( capturedSurface );
-		tracker.scanTrackables(capturedSurface);
+		detector.scanTrackables(capturedSurface);
 	}
 }
 

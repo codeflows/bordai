@@ -1,19 +1,19 @@
 #define HISTOGRAM_SCALE 2
 
 #include "cinder/app/AppBasic.h"
-#include "ImageTracker.h"
+#include "HaarDetector.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-ImageTracker::ImageTracker() {}
+HaarDetector::HaarDetector() {}
 
-ImageTracker::ImageTracker(string cascadeFilePath) {
+HaarDetector::HaarDetector(string cascadeFilePath) {
 	mCascade.load( cascadeFilePath );
 }
 
-void ImageTracker::scanTrackables(Surface cameraImage) {
+void HaarDetector::scanTrackables(Surface cameraImage) {
 	cv::Mat colorCameraImage( toOcv( cameraImage ) );
 	mCardDetector.findSquares(colorCameraImage, mHistogram.mStoryCards);
 	
@@ -38,7 +38,7 @@ void ImageTracker::scanTrackables(Surface cameraImage) {
 	}
 }
 
-void ImageTracker::drawTrackings(Rectf drawArea) {
+void HaarDetector::drawTrackings(Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
 	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
@@ -83,7 +83,7 @@ void ImageTracker::drawTrackings(Rectf drawArea) {
 	}
 }
 
-void ImageTracker::drawHistogram(Rectf drawArea) {
+void HaarDetector::drawHistogram(Rectf drawArea) {
 	gl::Texture histogramTexture = gl::Texture(mHistogram.mHistogramImage);
 	gl::draw(histogramTexture, drawArea);
 	histogramTexture.disable();

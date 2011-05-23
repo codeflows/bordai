@@ -3,14 +3,14 @@
 #include "cinder/Capture.h"
 #include "cinder/gl/Texture.h"
 #include "VideoCamera.h"
-#include "ImageTracker.h"
+#include "HaarDetector.h"
 #include <vector>
 
 class VideoCamera {
 public:	
 	void startCapturing(const int lensWidth, const int lensHeigth);
 	void stopCapturing();
-	void bufferCaptured(ImageTracker &tracker);
+	void bufferCaptured(HaarDetector &detector);
 	void draw(ci::Rectf drawArea);
 	void togglePause();
 	bool hasSomething();

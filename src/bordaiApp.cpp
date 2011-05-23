@@ -2,7 +2,7 @@
 #include "cinder/params/Params.h"
 
 #include "VideoCamera.h"
-#include "ImageTracker.h"
+#include "HaarDetector.h"
 
 #define CAMERA_WIDTH 640
 #define CAMERA_HEIGTH 480
@@ -23,7 +23,7 @@ class bordaiApp : public AppBasic {
 	
   private:
 	VideoCamera mCamera;
-	ImageTracker mTracker;
+	HaarDetector mHaarDetector;
 	params::InterfaceGl mParams;
 	Vec2i mWindowSize, mCameraLensSize;
 	float mFrameRate;
@@ -50,7 +50,7 @@ void bordaiApp::setup() {
 	mParams.addSeparator();
 	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");
 	
-	mTracker = ImageTracker( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
+	mHaarDetector = HaarDetector( getResourcePath( "haarcascade_frontalface_alt2.xml" ) );
 	mCamera.startCapturing(mCameraLensSize.x, mCameraLensSize.y);
 }
 
@@ -71,7 +71,7 @@ void bordaiApp::keyDown( KeyEvent event ) {
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
 	mWindowSize = getWindowSize();
-	mCamera.bufferCaptured(mTracker);
+	mCamera.bufferCaptured(mHaarDetector);
 }
 
 void bordaiApp::draw() {
@@ -87,11 +87,11 @@ void bordaiApp::draw() {
 		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
 		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
 		mCamera.draw(cameraArea);
-		mTracker.drawHistogram(histogramArea);
+		mHaarDetector.drawHistogram(histogramArea);
 		
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		mTracker.drawTrackings(cameraArea);
-		mTracker.drawTrackings(histogramArea);
+		mHaarDetector.drawTrackings(cameraArea);
+		mHaarDetector.drawTrackings(histogramArea);
 		
 		glPopMatrix();
 		
