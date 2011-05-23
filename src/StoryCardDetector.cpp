@@ -25,7 +25,7 @@ double angle( Point pt1, Point pt2, Point pt0 )
 
 // returns sequence of squares detected on the image.
 // the sequence is stored in the specified memory storage
-void StoryCardDetector::findSquares( const Mat& image, vector<vector<Point> >& squares )
+void StoryCardDetector::findSquares( const Mat& image, vector<ci::Rectf> &squares )
 {
     squares.clear();
     
@@ -98,7 +98,7 @@ void StoryCardDetector::findSquares( const Mat& image, vector<vector<Point> >& s
                     // (all angles are ~90 degree) then write quandrange
                     // vertices to resultant sequence
                     if( maxCosine < 0.3 )
-                        squares.push_back(approx);
+                        squares.push_back(ci::Rectf(approx[0].x, approx[1].y, approx[2].x, approx[3].y));
                 }
             }
         }

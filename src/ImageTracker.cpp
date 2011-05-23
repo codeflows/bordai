@@ -62,20 +62,24 @@ void ImageTracker::drawTrackings(Rectf drawArea) {
 		gl::drawSolidRect( scaledLoc );
 	}
 	
-	vector<Vec2f> polyPoints;
-	for(vector<vector<cv::Point> >::const_iterator aCardPoint = mHistogram.mStoryCards.begin(); aCardPoint != mHistogram.mStoryCards.end(); ++aCardPoint) {
-		polyPoints.clear();
-		vector<cv::Point> points = *aCardPoint;
-		for(vector<cv::Point>::const_iterator aPoint = points.begin(); aPoint != points.end(); ++aPoint) {
-			Vec2f dot(fromOcv(*aPoint));
-			dot.x *= x / (float)HISTOGRAM_SCALE;
-			dot.y *= y / (float)HISTOGRAM_SCALE;
-			dot.x += drawArea.x1;
-			dot.y += drawArea.y1;
-			polyPoints.push_back(dot);
-		}
-		PolyLine2f polyps(polyPoints);
-		gl::draw(polyps);
+	for (vector<Rectf>::const_iterator aScan = mHistogram.mStoryCards.begin(); aScan != mHistogram.mStoryCards.end(); ++aScan) {
+		Rectf scanLocation = *aScan;
+		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
+		
+		// scale to screen resolution
+		scaledLoc.x1 *= x / (float)HISTOGRAM_SCALE;
+		scaledLoc.x2 *= x / (float)HISTOGRAM_SCALE;
+		scaledLoc.y1 *= y / (float)HISTOGRAM_SCALE;
+		scaledLoc.y2 *= y / (float)HISTOGRAM_SCALE;
+		
+		// move to drawing area
+		scaledLoc.x1 += drawArea.x1;
+		scaledLoc.x2 += drawArea.x1;
+		scaledLoc.y1 += drawArea.y1;
+		scaledLoc.y2 += drawArea.y1;
+		
+		gl::drawSolidRect( scaledLoc );
+		
 	}
 }
 

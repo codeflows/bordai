@@ -24,7 +24,7 @@ protected:
 		
 		ci::ImageSourceRef		mHistogramImage;
 		std::vector<ci::Rectf>	mScans;
-		std::vector<std::vector<cv::Point> > mStoryCards;
+		std::vector<ci::Rectf>  mStoryCards;
 	};
 	
 private:
