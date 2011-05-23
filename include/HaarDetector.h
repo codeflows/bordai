@@ -14,9 +14,9 @@ public:
 	
 	void scanTrackables(ci::Surface surface);
 	void drawTrackings(ci::Rectf drawArea);
-	void drawHistogram(ci::Rectf drawArea);
 
+	std::vector<ci::gl::Texture> mHistogramTextures;
+private:
 	cv::CascadeClassifier	mCascade;
-	ci::gl::Texture			mHistogramTexture;
 	std::vector<ci::Rectf>	mScans;
 };

@@ -26,7 +26,7 @@ double angle( Point pt1, Point pt2, Point pt0 )
 
 // returns sequence of squares detected on the image.
 // the sequence is stored in the specified memory storage
-const Mat& findSquares( const Mat& image, vector<ci::Rectf> &squares ) {    
+void findSquares( const Mat& image, vector<ci::gl::Texture> &histogramTextures, vector<ci::Rectf> &squares ) {    
     Mat pyr, timg, gray0(image.size(), CV_8U), gray;
     
     // down-scale and upscale the image to filter out the noise
@@ -53,6 +53,7 @@ const Mat& findSquares( const Mat& image, vector<ci::Rectf> &squares ) {
                 // dilate canny output to remove potential
                 // holes between edge segments
                 dilate(gray, gray, Mat(), Point(-1,-1));
+				histogramTextures.push_back(ci::gl::Texture(fromOcv(gray)));
             }
             else
             {
@@ -100,19 +101,19 @@ const Mat& findSquares( const Mat& image, vector<ci::Rectf> &squares ) {
             }
         }
     }
-	return image;
 }
 
-void StoryCardDetector::scanTrackables(ci::Surface cameraImage) {
+void StoryCardDetector::scanTrackables(Surface cameraImage) {
 	cv::Mat colorCameraImage( toOcv(cameraImage) );
 	mStoryCards.clear();
-	cv::Mat histogramImage = findSquares(colorCameraImage, mStoryCards);
-	mHistogramTexture = gl::Texture(fromOcv(histogramImage));
+	mHistogramTextures.clear();
+	findSquares(colorCameraImage, mHistogramTextures, mStoryCards);
 }
 
-void StoryCardDetector::drawTrackings(ci::Rectf drawArea) {
-	float x = drawArea.getWidth() / (float)mHistogramTexture.getWidth();
-	float y = drawArea.getHeight() / (float)mHistogramTexture.getHeight();
+void StoryCardDetector::drawTrackings(Rectf drawArea) {
+	gl::color( ColorA( 0, 1, 1, 0.45f ) );
+	float x = drawArea.getWidth() / (float)mHistogramTextures.front().getWidth();
+	float y = drawArea.getHeight() / (float)mHistogramTextures.front().getHeight();
 	
 	for (vector<Rectf>::const_iterator aScan = mStoryCards.begin(); aScan != mStoryCards.end(); ++aScan) {
 		Rectf scanLocation = *aScan;
@@ -132,9 +133,4 @@ void StoryCardDetector::drawTrackings(ci::Rectf drawArea) {
 		
 		gl::drawSolidRect( scaledLoc );
 	}	
-}
-
-void StoryCardDetector::drawHistogram(ci::Rectf drawArea) {
-	gl::draw(mHistogramTexture, drawArea);
-	mHistogramTexture.disable();
 }

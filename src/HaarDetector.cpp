@@ -22,12 +22,13 @@ void HaarDetector::scanTrackables(Surface cameraImage) {
 	cv::equalizeHist( histogramImage, histogramImage );
 	
 	mScans.clear();
+	mHistogramTextures.clear();
+	mHistogramTextures.push_back(gl::Texture(fromOcv(histogramImage)));
+
 	
 	vector<cv::Rect> newScans;
 	mCascade.detectMultiScale( histogramImage, newScans );
-	
-	mHistogramTexture = gl::Texture(fromOcv(histogramImage));
-	
+		
 	for (vector<cv::Rect>::const_iterator aScan = newScans.begin(); aScan != newScans.end(); ++aScan) {
 		Rectf scanLocation( fromOcv( *aScan ) );
 		mScans.push_back( scanLocation );
@@ -35,8 +36,9 @@ void HaarDetector::scanTrackables(Surface cameraImage) {
 }
 
 void HaarDetector::drawTrackings(Rectf drawArea) {
-	float x = drawArea.getWidth() / (float)mHistogramTexture.getWidth();
-	float y = drawArea.getHeight() / (float)mHistogramTexture.getHeight();
+	gl::color( ColorA( 1, 1, 0, 0.45f ) );
+	float x = drawArea.getWidth() / (float)mHistogramTextures.front().getWidth();
+	float y = drawArea.getHeight() / (float)mHistogramTextures.front().getHeight();
 	
 	for (vector<Rectf>::const_iterator aScan = mScans.begin(); aScan != mScans.end(); ++aScan) {
 		Rectf scanLocation = *aScan;
@@ -56,9 +58,4 @@ void HaarDetector::drawTrackings(Rectf drawArea) {
 		
 		gl::drawSolidRect( scaledLoc );
 	}
-}
-
-void HaarDetector::drawHistogram(Rectf drawArea) {
-	gl::draw(mHistogramTexture, drawArea);
-	mHistogramTexture.disable();
 }

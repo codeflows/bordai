@@ -87,22 +87,39 @@ void bordaiApp::draw() {
 		gl::setMatricesWindow( mWindowSize.x, mWindowSize.y );
 		glPushMatrix();
 		
-		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
-		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
+		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 1.5f );
+		Rectf histogramArea( 0, mWindowSize.y / 1.5f, mWindowSize.x, mWindowSize.y );
 		
 		mCamera.draw(cameraArea);
-		mHaarDetector.drawHistogram(histogramArea);
-		
-		gl::color( ColorA( 1, 1, 0, 0.45f ) );
-		mHaarDetector.drawTrackings(cameraArea);
-		mHaarDetector.drawTrackings(histogramArea);
-		
-		gl::color( ColorA( 0, 1, 1, 0.45f ) );
+
+		//mHaarDetector.drawTrackings(cameraArea);
 		mStoryCardDetector.drawTrackings(cameraArea);
-		mStoryCardDetector.drawTrackings(histogramArea);
+		
+		vector<gl::Texture> storyTextures = mStoryCardDetector.mHistogramTextures;
+		vector<gl::Texture> haarTextures = mHaarDetector.mHistogramTextures;
+
+		float hAreaWidth = (histogramArea.x2 - histogramArea.x1) / (float)(storyTextures.size() + haarTextures.size());
+		histogramArea.x2 = histogramArea.x1 + hAreaWidth;
+		
+		for (vector<gl::Texture>::const_iterator aTexture = storyTextures.begin(); aTexture != storyTextures.end(); ++aTexture) {
+			gl::color( Color::white() );
+			gl::draw(*aTexture, histogramArea);
+			aTexture->disable();
+			mStoryCardDetector.drawTrackings(histogramArea);
+			histogramArea.x1 += hAreaWidth;
+			histogramArea.x2 += hAreaWidth;
+		}
+		
+		for (vector<gl::Texture>::const_iterator aTexture = haarTextures.begin(); aTexture != haarTextures.end(); ++aTexture) {
+			gl::color( Color::white() );
+			gl::draw(*aTexture, histogramArea);
+			aTexture->disable();
+			mHaarDetector.drawTrackings(histogramArea);
+			histogramArea.x1 += hAreaWidth;
+			histogramArea.x2 += hAreaWidth;
+		}
 		
 		glPopMatrix();
-		
 	}
 	
 	params::InterfaceGl::draw();
