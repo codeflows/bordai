@@ -5,7 +5,6 @@
 #include "cinder/Surface.h"
 #include "cinder/CinderMath.h"
 #include "CinderOpenCv.h"
-#include "StoryCardDetector.h"
 #include <vector>
 
 class HaarDetector {
