@@ -17,6 +17,6 @@ public:
 	void drawHistogram(ci::Rectf drawArea);
 
 	cv::CascadeClassifier	mCascade;
-	ci::ImageSourceRef		mHistogramImage;
+	ci::gl::Texture			mHistogramTexture;
 	std::vector<ci::Rectf>	mScans;
 };

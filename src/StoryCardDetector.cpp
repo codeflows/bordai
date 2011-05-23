@@ -26,7 +26,7 @@ double angle( Point pt1, Point pt2, Point pt0 )
 
 // returns sequence of squares detected on the image.
 // the sequence is stored in the specified memory storage
-void findSquares( const Mat& image, vector<ci::Rectf> &squares ) {    
+const Mat& findSquares( const Mat& image, vector<ci::Rectf> &squares ) {    
     Mat pyr, timg, gray0(image.size(), CV_8U), gray;
     
     // down-scale and upscale the image to filter out the noise
@@ -100,19 +100,19 @@ void findSquares( const Mat& image, vector<ci::Rectf> &squares ) {
             }
         }
     }
+	return image;
 }
 
 void StoryCardDetector::scanTrackables(ci::Surface cameraImage) {
 	cv::Mat colorCameraImage( toOcv(cameraImage) );
 	mStoryCards.clear();
-	findSquares(colorCameraImage, mStoryCards);
-	mHistogramImage = fromOcv(colorCameraImage);
+	cv::Mat histogramImage = findSquares(colorCameraImage, mStoryCards);
+	mHistogramTexture = gl::Texture(fromOcv(histogramImage));
 }
 
 void StoryCardDetector::drawTrackings(ci::Rectf drawArea) {
-	gl::Texture histogramTexture = gl::Texture(mHistogramImage);
-	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
-	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
+	float x = drawArea.getWidth() / (float)mHistogramTexture.getWidth();
+	float y = drawArea.getHeight() / (float)mHistogramTexture.getHeight();
 	
 	for (vector<Rectf>::const_iterator aScan = mStoryCards.begin(); aScan != mStoryCards.end(); ++aScan) {
 		Rectf scanLocation = *aScan;
@@ -131,13 +131,10 @@ void StoryCardDetector::drawTrackings(ci::Rectf drawArea) {
 		scaledLoc.y2 += drawArea.y1;
 		
 		gl::drawSolidRect( scaledLoc );
-		
 	}	
 }
 
 void StoryCardDetector::drawHistogram(ci::Rectf drawArea) {
-	gl::Texture histogramTexture = gl::Texture(mHistogramImage);
-	gl::draw(histogramTexture, drawArea);
-	histogramTexture.disable();
-	
+	gl::draw(mHistogramTexture, drawArea);
+	mHistogramTexture.disable();
 }
