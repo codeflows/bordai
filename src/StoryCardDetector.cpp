@@ -79,9 +79,8 @@ void findSquares( const Mat& image, vector<ci::Rectf> &squares ) {
                 // Note: absolute value of an area is used because
                 // area may be positive or negative - in accordance with the
                 // contour orientation
-                if( approx.size() == 4 &&
-				   fabs(contourArea(Mat(approx))) > 1000 &&
-				   isContourConvex(Mat(approx)) )
+				int cArea = fabs(contourArea(Mat(approx)));
+                if( approx.size() == 4 && cArea > 1000 && cArea < 50000 && isContourConvex(Mat(approx)) )
                 {
                     double maxCosine = 0;
 					
