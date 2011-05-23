@@ -16,15 +16,7 @@ public:
 	void drawTrackings(ci::Rectf drawArea);
 	void drawHistogram(ci::Rectf drawArea);
 
-protected:
-	class Histogram {
-	public:
-		Histogram() {}
-		
-		ci::ImageSourceRef		mHistogramImage;
-		std::vector<ci::Rectf>	mScans;
-	};
-	
 	cv::CascadeClassifier	mCascade;
-	Histogram				mHistogram;
+	ci::ImageSourceRef		mHistogramImage;
+	std::vector<ci::Rectf>	mScans;
 };
