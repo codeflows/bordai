@@ -88,12 +88,15 @@ void bordaiApp::draw() {
 		
 		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 2.0f );
 		Rectf histogramArea( 0, mWindowSize.y / 2.0f, mWindowSize.x, mWindowSize.y );
+		
 		mCamera.draw(cameraArea);
 		mHaarDetector.drawHistogram(histogramArea);
 		
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		mHaarDetector.drawTrackings(cameraArea);
 		mHaarDetector.drawTrackings(histogramArea);
+		
+		gl::color( ColorA( 0, 1, 1, 0.45f ) );
 		mStoryCardDetector.drawTrackings(cameraArea);
 		mStoryCardDetector.drawTrackings(histogramArea);
 		
