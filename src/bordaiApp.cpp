@@ -48,7 +48,8 @@ void bordaiApp::setup() {
 	mParams.addParam("Camera width", &mCameraLensSize.x, "min=128 max=1024 step=64 keyIncr=W keyDecr=w");
 	mParams.addParam("Camera height", &mCameraLensSize.y, "min=128 max=1024 step=64 keyIncr=H keyDecr=h");
 	mParams.addSeparator();
-	mParams.addText("Press space to apply camera resolution");
+	mParams.addText("Press space to apply new camera resolution");
+	mParams.addText("Press 'p' to pause/play camera");
 	mParams.addSeparator();
 	mParams.addParam("Framerate", &mFrameRate, "min=5.0 max=70.0 step=5.0 keyIncr=+ keyDecr=-");
 	
