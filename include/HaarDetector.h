@@ -24,11 +24,8 @@ protected:
 		
 		ci::ImageSourceRef		mHistogramImage;
 		std::vector<ci::Rectf>	mScans;
-		std::vector<ci::Rectf>  mStoryCards;
 	};
 	
-private:
 	cv::CascadeClassifier	mCascade;
 	Histogram				mHistogram;
-	StoryCardDetector		mCardDetector;
 };

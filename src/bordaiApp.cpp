@@ -3,6 +3,7 @@
 
 #include "VideoCamera.h"
 #include "HaarDetector.h"
+#include "StoryCardDetector.h"
 
 #define CAMERA_WIDTH 640
 #define CAMERA_HEIGTH 480
@@ -24,6 +25,7 @@ class bordaiApp : public AppBasic {
   private:
 	VideoCamera mCamera;
 	HaarDetector mHaarDetector;
+	StoryCardDetector mStoryCardDetector;
 	params::InterfaceGl mParams;
 	Vec2i mWindowSize, mCameraLensSize;
 	float mFrameRate;
@@ -71,7 +73,7 @@ void bordaiApp::keyDown( KeyEvent event ) {
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
 	mWindowSize = getWindowSize();
-	mCamera.bufferCaptured(mHaarDetector);
+	mCamera.bufferCaptured(mHaarDetector, mStoryCardDetector);
 }
 
 void bordaiApp::draw() {
@@ -92,6 +94,8 @@ void bordaiApp::draw() {
 		gl::color( ColorA( 1, 1, 0, 0.45f ) );
 		mHaarDetector.drawTrackings(cameraArea);
 		mHaarDetector.drawTrackings(histogramArea);
+		mStoryCardDetector.drawTrackings(cameraArea);
+		mStoryCardDetector.drawTrackings(histogramArea);
 		
 		glPopMatrix();
 		

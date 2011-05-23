@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string.h>
 
+using namespace ci;
 using namespace cv;
 using namespace std;
 
@@ -25,10 +26,7 @@ double angle( Point pt1, Point pt2, Point pt0 )
 
 // returns sequence of squares detected on the image.
 // the sequence is stored in the specified memory storage
-void StoryCardDetector::findSquares( const Mat& image, vector<ci::Rectf> &squares )
-{
-    squares.clear();
-    
+void findSquares( const Mat& image, vector<ci::Rectf> &squares ) {    
     Mat pyr, timg, gray0(image.size(), CV_8U), gray;
     
     // down-scale and upscale the image to filter out the noise
@@ -103,4 +101,44 @@ void StoryCardDetector::findSquares( const Mat& image, vector<ci::Rectf> &square
             }
         }
     }
+}
+
+void StoryCardDetector::scanTrackables(ci::Surface cameraImage) {
+	cv::Mat colorCameraImage( toOcv(cameraImage) );
+	mStoryCards.clear();
+	findSquares(colorCameraImage, mStoryCards);
+	mHistogramImage = fromOcv(colorCameraImage);
+}
+
+void StoryCardDetector::drawTrackings(ci::Rectf drawArea) {
+	gl::Texture histogramTexture = gl::Texture(mHistogramImage);
+	float x = drawArea.getWidth() / (float)histogramTexture.getWidth();
+	float y = drawArea.getHeight() / (float)histogramTexture.getHeight();
+	
+	for (vector<Rectf>::const_iterator aScan = mStoryCards.begin(); aScan != mStoryCards.end(); ++aScan) {
+		Rectf scanLocation = *aScan;
+		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
+		
+		// scale to screen resolution
+		scaledLoc.x1 *= x;
+		scaledLoc.x2 *= x;
+		scaledLoc.y1 *= y;
+		scaledLoc.y2 *= y;
+		
+		// move to drawing area
+		scaledLoc.x1 += drawArea.x1;
+		scaledLoc.x2 += drawArea.x1;
+		scaledLoc.y1 += drawArea.y1;
+		scaledLoc.y2 += drawArea.y1;
+		
+		gl::drawSolidRect( scaledLoc );
+		
+	}	
+}
+
+void StoryCardDetector::drawHistogram(ci::Rectf drawArea) {
+	gl::Texture histogramTexture = gl::Texture(mHistogramImage);
+	gl::draw(histogramTexture, drawArea);
+	histogramTexture.disable();
+	
 }

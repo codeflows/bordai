@@ -1,6 +1,5 @@
 #define HISTOGRAM_SCALE 2
 
-#include "cinder/app/AppBasic.h"
 #include "HaarDetector.h"
 
 using namespace ci;
@@ -13,10 +12,7 @@ HaarDetector::HaarDetector(string cascadeFilePath) {
 	mCascade.load( cascadeFilePath );
 }
 
-void HaarDetector::scanTrackables(Surface cameraImage) {
-	cv::Mat colorCameraImage( toOcv( cameraImage ) );
-	mCardDetector.findSquares(colorCameraImage, mHistogram.mStoryCards);
-	
+void HaarDetector::scanTrackables(Surface cameraImage) {	
 	cv::Mat grayCameraImage( toOcv( cameraImage, CV_8UC1 ) );
 	int histogramWidth = cameraImage.getWidth() / HISTOGRAM_SCALE;
 	int histogramHeigth = cameraImage.getHeight() / HISTOGRAM_SCALE;
@@ -60,26 +56,6 @@ void HaarDetector::drawTrackings(Rectf drawArea) {
 		scaledLoc.y2 += drawArea.y1;
 		
 		gl::drawSolidRect( scaledLoc );
-	}
-	
-	for (vector<Rectf>::const_iterator aScan = mHistogram.mStoryCards.begin(); aScan != mHistogram.mStoryCards.end(); ++aScan) {
-		Rectf scanLocation = *aScan;
-		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
-		
-		// scale to screen resolution
-		scaledLoc.x1 *= x / (float)HISTOGRAM_SCALE;
-		scaledLoc.x2 *= x / (float)HISTOGRAM_SCALE;
-		scaledLoc.y1 *= y / (float)HISTOGRAM_SCALE;
-		scaledLoc.y2 *= y / (float)HISTOGRAM_SCALE;
-		
-		// move to drawing area
-		scaledLoc.x1 += drawArea.x1;
-		scaledLoc.x2 += drawArea.x1;
-		scaledLoc.y1 += drawArea.y1;
-		scaledLoc.y2 += drawArea.y1;
-		
-		gl::drawSolidRect( scaledLoc );
-		
 	}
 }
 
