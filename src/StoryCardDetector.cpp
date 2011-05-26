@@ -110,27 +110,10 @@ void StoryCardDetector::scanTrackables(Surface cameraImage) {
 	findSquares(colorCameraImage, mHistogramTextures, mStoryCards);
 }
 
-void StoryCardDetector::drawTrackings(Rectf drawArea) {
+void StoryCardDetector::drawTrackings() {
 	gl::color( ColorA( 0, 1, 1, 0.45f ) );
-	float x = drawArea.getWidth() / (float)mHistogramTextures.front().getWidth();
-	float y = drawArea.getHeight() / (float)mHistogramTextures.front().getHeight();
-	
+
 	for (vector<Rectf>::const_iterator aScan = mStoryCards.begin(); aScan != mStoryCards.end(); ++aScan) {
-		Rectf scanLocation = *aScan;
-		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
-		
-		// scale to screen resolution
-		scaledLoc.x1 *= x;
-		scaledLoc.x2 *= x;
-		scaledLoc.y1 *= y;
-		scaledLoc.y2 *= y;
-		
-		// move to drawing area
-		scaledLoc.x1 += drawArea.x1;
-		scaledLoc.x2 += drawArea.x1;
-		scaledLoc.y1 += drawArea.y1;
-		scaledLoc.y2 += drawArea.y1;
-		
-		gl::drawSolidRect( scaledLoc );
+		gl::drawSolidRect( *aScan );
 	}	
 }

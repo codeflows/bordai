@@ -11,9 +11,9 @@ public:
 	StoryCardDetector();
 	
 	void scanTrackables(ci::Surface surface);
-	void drawTrackings(ci::Rectf drawArea);
+	void drawTrackings();
 	std::vector<ci::gl::Texture>	mHistogramTextures;
 	
-protected:
+private:
 	std::vector<ci::Rectf>			mStoryCards;	
 };

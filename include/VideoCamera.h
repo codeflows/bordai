@@ -12,11 +12,11 @@ public:
 	void startCapturing(const int lensWidth, const int lensHeigth);
 	void stopCapturing();
 	void bufferCaptured(HaarDetector &haarDetector, StoryCardDetector &storyCardDetector);
-	void draw(ci::Rectf drawArea);
+	void draw();
 	void togglePause();
 	bool hasSomething();
 			
 private:
 	ci::Capture	mCapture;
-	ci::gl::Texture mCameraTexture;	
+	ci::gl::Texture mCameraTexture;
 };

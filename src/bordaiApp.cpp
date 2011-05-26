@@ -1,5 +1,6 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/params/Params.h"
+#include "cinder/Camera.h"
 
 #include "VideoCamera.h"
 #include "HaarDetector.h"
@@ -23,6 +24,7 @@ class bordaiApp : public AppBasic {
 	void draw();
 	
   private:
+	CameraOrtho mScreenView;
 	VideoCamera mCamera;
 	HaarDetector mHaarDetector;
 	StoryCardDetector mStoryCardDetector;
@@ -68,58 +70,77 @@ void bordaiApp::keyDown( KeyEvent event ) {
 	if(c == ' ') {
 		mCamera.stopCapturing();
 		mCamera.startCapturing(mCameraLensSize.x, mCameraLensSize.y);
-	}	
+	}
 }
 
 void bordaiApp::update() {
 	setFrameRate(mFrameRate);
 	mWindowSize = getWindowSize();
 	mCamera.bufferCaptured(mHaarDetector, mStoryCardDetector);
+	mScreenView.setAspectRatio(getWindowAspectRatio());
+	mScreenView.setOrtho(0., mCameraLensSize.x, mCameraLensSize.y, 0., 0., 1.);	
 }
 
 void bordaiApp::draw() {
+	gl::enable( GL_TEXTURE_2D );
 	gl::enableAlphaBlending();
+	
 	gl::clear( Color::black() );
 	
 	if( mCamera.hasSomething() ) {
 		
 		gl::color( Color::white() );
-		gl::setMatricesWindow( mWindowSize.x, mWindowSize.y );
-		glPushMatrix();
+		gl::setMatricesWindow( getWindowWidth(), getWindowHeight() );
 		
-		Rectf cameraArea( 0, 0, mWindowSize.x, mWindowSize.y / 1.5f );
-		Rectf histogramArea( 0, mWindowSize.y / 1.5f, mWindowSize.x, mWindowSize.y );
-		
-		mCamera.draw(cameraArea);
+		gl::pushMatrices();
+		gl::setMatrices( mScreenView );
+		gl::scale(Vec3f(1, 2./3., 1));
 
-		//mHaarDetector.drawTrackings(cameraArea);
-		mStoryCardDetector.drawTrackings(cameraArea);
+		mCamera.draw();
+//		mHaarDetector.drawTrackings();
+		mStoryCardDetector.drawTrackings();
+		
+		gl::popMatrices();
 		
 		vector<gl::Texture> storyTextures = mStoryCardDetector.mHistogramTextures;
 		vector<gl::Texture> haarTextures = mHaarDetector.mHistogramTextures;
-
-		float hAreaWidth = (histogramArea.x2 - histogramArea.x1) / (float)(storyTextures.size() + haarTextures.size());
-		histogramArea.x2 = histogramArea.x1 + hAreaWidth;
+		
+		const float amountOfHistogramTextures = storyTextures.size() + haarTextures.size();
+		
+		Vec3f viewTranslation(0, (float)mCameraLensSize.y * 2./3., 0);
+		Vec3f storyHistogramTextureScale(1./amountOfHistogramTextures, 1./3., 1);
 		
 		for (vector<gl::Texture>::const_iterator aTexture = storyTextures.begin(); aTexture != storyTextures.end(); ++aTexture) {
+			glPushMatrix();
+			gl::setMatrices( mScreenView );
+			gl::translate( viewTranslation );
+			gl::scale( storyHistogramTextureScale );
 			gl::color( Color::white() );
-			gl::draw(*aTexture, histogramArea);
-			aTexture->disable();
-			mStoryCardDetector.drawTrackings(histogramArea);
-			histogramArea.x1 += hAreaWidth;
-			histogramArea.x2 += hAreaWidth;
+			gl::draw( *aTexture );
+			aTexture -> disable();
+			
+			mStoryCardDetector.drawTrackings();
+			
+			glPopMatrix();
+			viewTranslation.x += mCameraLensSize.x / amountOfHistogramTextures;
 		}
+		
+		Vec3f haarHistogramTextureScale(2./amountOfHistogramTextures, 2./3., 1);
 		
 		for (vector<gl::Texture>::const_iterator aTexture = haarTextures.begin(); aTexture != haarTextures.end(); ++aTexture) {
+			glPushMatrix();
+			gl::setMatrices( mScreenView );
+			gl::translate( viewTranslation );
+			gl::scale( haarHistogramTextureScale );
 			gl::color( Color::white() );
-			gl::draw(*aTexture, histogramArea);
-			aTexture->disable();
-			mHaarDetector.drawTrackings(histogramArea);
-			histogramArea.x1 += hAreaWidth;
-			histogramArea.x2 += hAreaWidth;
+			gl::draw( *aTexture );
+			aTexture -> disable();
+			
+			mHaarDetector.drawTrackings();
+			
+			glPopMatrix();
+			viewTranslation += mCameraLensSize.x / amountOfHistogramTextures;
 		}
-		
-		glPopMatrix();
 	}
 	
 	params::InterfaceGl::draw();

@@ -27,8 +27,8 @@ void VideoCamera::bufferCaptured(HaarDetector &haarDetector, StoryCardDetector &
 	}
 }
 
-void VideoCamera::draw(Rectf drawArea) {
-	gl::draw(mCameraTexture, drawArea);
+void VideoCamera::draw() {
+	gl::draw(mCameraTexture);
 	mCameraTexture.disable();
 }
 

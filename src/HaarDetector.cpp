@@ -25,7 +25,6 @@ void HaarDetector::scanTrackables(Surface cameraImage) {
 	mHistogramTextures.clear();
 	mHistogramTextures.push_back(gl::Texture(fromOcv(histogramImage)));
 
-	
 	vector<cv::Rect> newScans;
 	mCascade.detectMultiScale( histogramImage, newScans );
 		
@@ -35,27 +34,10 @@ void HaarDetector::scanTrackables(Surface cameraImage) {
 	}
 }
 
-void HaarDetector::drawTrackings(Rectf drawArea) {
+void HaarDetector::drawTrackings() {
 	gl::color( ColorA( 1, 1, 0, 0.45f ) );
-	float x = drawArea.getWidth() / (float)mHistogramTextures.front().getWidth();
-	float y = drawArea.getHeight() / (float)mHistogramTextures.front().getHeight();
 	
 	for (vector<Rectf>::const_iterator aScan = mScans.begin(); aScan != mScans.end(); ++aScan) {
-		Rectf scanLocation = *aScan;
-		Rectf scaledLoc(scanLocation.getUpperLeft(), scanLocation.getLowerRight());
-		
-		// scale to screen resolution
-		scaledLoc.x1 *= x;
-		scaledLoc.x2 *= x;
-		scaledLoc.y1 *= y;
-		scaledLoc.y2 *= y;
-
-		// move to drawing area
-		scaledLoc.x1 += drawArea.x1;
-		scaledLoc.x2 += drawArea.x1;
-		scaledLoc.y1 += drawArea.y1;
-		scaledLoc.y2 += drawArea.y1;
-		
-		gl::drawSolidRect( scaledLoc );
+		gl::drawSolidRect( *aScan );
 	}
 }

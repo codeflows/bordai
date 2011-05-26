@@ -13,9 +13,10 @@ public:
 	HaarDetector(std::string cascadeFilePath);
 	
 	void scanTrackables(ci::Surface surface);
-	void drawTrackings(ci::Rectf drawArea);
+	void drawTrackings();
 
 	std::vector<ci::gl::Texture> mHistogramTextures;
+
 private:
 	cv::CascadeClassifier	mCascade;
 	std::vector<ci::Rectf>	mScans;
