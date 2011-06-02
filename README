@@ -6,11 +6,12 @@ build-libs.sh to build libraries which are as github submodules under lib
 start.sh to build everything and start application
 
 TODO:
-decent build
-example data for automated testing
-board/card detections
-different card colors
-board lane detection?
-agilezen integration?
-nice client to display cool stuff
-camera over http?
+* decent build
+* example data for automated testing
+* board/card detections
+* different card colors
+* use card dimensions to help the recognition
+* board lane detection?
+* agilezen integration?
+* nice client to display cool stuff
+* camera over http?
