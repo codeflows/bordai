@@ -11,6 +11,7 @@ TODO:
 * board/card detections
 * different card colors
 * use card dimensions to help the recognition
+* separate the card recognition code from the cinder frontend
 * board lane detection?
 * agilezen integration?
 * nice client to display cool stuff
