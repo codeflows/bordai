@@ -10,6 +10,7 @@ TODO:
 * example data for automated testing
 * board/card detections
 * different card colors
+  * color tracking: e.g. http://www.youtube.com/watch?v=a05mzsXTb6k
 * use card dimensions to help the recognition
 * separate the card recognition code from the cinder frontend
 * board lane detection?
